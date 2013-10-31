@@ -3,86 +3,47 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>de.gedoplan.seminar</groupId>
-    <artifactId>enterpriseMaster</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
-    <relativePath>../../../../../../common/enterpriseMaster</relativePath>
+    <groupId>de.gedoplan</groupId>
+    <artifactId>build-master</artifactId>
+    <version>7.0.12</version>
   </parent>
 
-  <artifactId>JEE_DEMO</artifactId>
+  <groupId>de.gedoplan.jax</groupId>
+  <artifactId>javaee-workshop</artifactId>
+  <version>7.0.0-SNAPSHOT</version>
 
   <packaging>war</packaging>
 
-  <properties>
-    <facet.cdi.enabled>true</facet.cdi.enabled>
-    <facet.jsf.enabled>true</facet.jsf.enabled>
-    <deploy2server>true</deploy2server>
-  </properties>
+  <repositories>
+    <repository>
+      <id>gedoplanPublic</id>
+      <url>http://svn.involva-gruppe.de/nexus/content/groups/public</url>
+    </repository>
+  </repositories>
 
-  <build>
-    <finalName>${project.artifactId}</finalName>
-  </build>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>gedoplanPublic</id>
+      <url>http://svn.involva-gruppe.de/nexus/content/groups/public</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <properties>
+    <checkstyle.config>GEDOPLAN_SEMINAR</checkstyle.config>
+  </properties>
 
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>javax.annotation</groupId>
-        <artifactId>jsr250-api</artifactId>
-        <version>1.1</version>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
       </dependency>
 
       <dependency>
-        <groupId>javax.ejb</groupId>
-        <artifactId>ejb</artifactId>
-        <version>3.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.faces</groupId>
-        <artifactId>jsf-api</artifactId>
-        <version>2.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.enterprise</groupId>
-        <artifactId>cdi-api</artifactId>
-        <version>1.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.inject</groupId>
-        <artifactId>javax.inject</artifactId>
-        <version>1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.jms</groupId>
-        <artifactId>jms</artifactId>
-        <version>1.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.persistence</groupId>
-        <artifactId>persistence-api</artifactId>
-        <version>2.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>servlet-api</artifactId>
-        <version>3.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.transaction</groupId>
-        <artifactId>transaction-api</artifactId>
-        <version>1.1</version>
-      </dependency>
-
-      <dependency>
-        <groupId>javax.validation</groupId>
-        <artifactId>validation-api</artifactId>
-        <version>1.0.0.GA</version>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>7.0</version>
       </dependency>
 
       <dependency>
@@ -94,75 +55,43 @@
       <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
-        <version>1.2.14</version>
+        <version>1.2.16</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>1.5.6</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-simple</artifactId>
+        <version>1.5.6</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-log4j12</artifactId>
+        <version>1.5.6</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
 
+  <build>
+    <defaultGoal>install</defaultGoal>
+  </build>
+
   <dependencies>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
     <dependency>
       <groupId>commons-logging</groupId>
       <artifactId>commons-logging</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.annotation</groupId>
-      <artifactId>jsr250-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.ejb</groupId>
-      <artifactId>ejb</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.enterprise</groupId>
-      <artifactId>cdi-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.faces</groupId>
-      <artifactId>jsf-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.inject</groupId>
-      <artifactId>javax.inject</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.jms</groupId>
-      <artifactId>jms</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.persistence</groupId>
-      <artifactId>persistence-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.servlet</groupId>
-      <artifactId>servlet-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.transaction</groupId>
-      <artifactId>transaction-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <scope>provided</scope>
     </dependency>
 
     <dependency>
