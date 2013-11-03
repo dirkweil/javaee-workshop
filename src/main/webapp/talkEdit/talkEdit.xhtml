@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body>
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel for="title" value="Title:" />
+      <h:inputText id="title" value="#{talkEditModel.talk.title}" />
+
+      <h:outputLabel for="speaker" value="Speaker:" />
+      <h:inputText id="speaker" value="#{talkEditModel.talk.speakersAsCommaSeparatedList}" />
+
+      <h:outputLabel for="talkType" value="Type:" />
+      <h:selectOneMenu id="talkType" value="#{talkEditModel.talk.talkType}">
+        <f:selectItems value="#{talkEditModel.talkTypes}"/>
+      </h:selectOneMenu>
+      
+      <h:outputLabel for="start" value="Start:" />
+      <h:inputText id="start" value="#{talkEditModel.talk.start}">
+        <f:convertDateTime pattern="dd.MM.yy HH:mm"/>
+      </h:inputText>
+
+      <h:outputLabel for="duration" value="Duration:" />
+      <h:inputText id="duration" value="#{talkEditModel.talk.duration}">
+        <f:convertDateTime pattern="HH:mm"/>
+      </h:inputText>
+    </h:panelGrid>
+    
+    <h:commandButton value="ok" action="#{talkEditModel.save()}" />
+    <h:commandButton value="cancel" action="exit" immediate="true"/>
+  </h:form> 
+
+</body> 
+</html>

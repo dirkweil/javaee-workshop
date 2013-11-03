@@ -2,9 +2,12 @@
 <PROCESS model-entity="JSFProcess">
  <PROCESS-ITEM NAME="rules:*" PATH="*" SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="exitSpecialDay::#index" NAME="output"
-    PATH="/index" TARGET="rules:#index" TITLE="exitSpecialDay" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="home::#index" NAME="output" PATH="/index"
+    TARGET="rules:#index" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="exitTalkEdit::#talk" NAME="output1"
+    PATH="/talk" TARGET="rules:#talk" TITLE="exitTalkEdit" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#index" PATH="/index" SHAPE="240,33,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#talk" PATH="/talk" SHAPE="256,177,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

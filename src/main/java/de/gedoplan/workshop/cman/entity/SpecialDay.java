@@ -1,18 +1,15 @@
 package de.gedoplan.workshop.cman.entity;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
-public class SpecialDay
+public class SpecialDay extends StringIdEntity
 {
-  @Id
-  private String id;
   private String name;
 
   public SpecialDay(String id, String name)
   {
-    this.id = id;
+    super(id);
     this.name = name;
   }
 
@@ -30,14 +27,10 @@ public class SpecialDay
     this.name = name;
   }
 
-  public String getId()
-  {
-    return this.id;
-  }
-
+  @Override
   public void setId(String id)
   {
-    this.id = id;
+    super.setId(id);
   }
 
 }
