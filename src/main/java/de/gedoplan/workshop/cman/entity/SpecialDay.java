@@ -35,4 +35,9 @@ public class SpecialDay
     return this.id;
   }
 
+  public void setId(String id)
+  {
+    this.id = id;
+  }
+
 }

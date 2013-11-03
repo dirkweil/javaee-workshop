@@ -9,8 +9,10 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
 @ApplicationScoped
+@Transactional
 public class SpecialDayRepository
 {
   @Inject
