@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -28,6 +29,9 @@ public class Talk extends GeneratedIntegerIdEntity
 
   @Temporal(TemporalType.TIME)
   private Date         duration;
+
+  @ManyToOne
+  private SpecialDay   specialDay;
 
   public Talk(String title, TalkType talkType, Date start, Date duration, String... speakers)
   {
@@ -89,6 +93,16 @@ public class Talk extends GeneratedIntegerIdEntity
   public void setDuration(Date duration)
   {
     this.duration = duration;
+  }
+
+  public SpecialDay getSpecialDay()
+  {
+    return this.specialDay;
+  }
+
+  public void setSpecialDay(SpecialDay specialDay)
+  {
+    this.specialDay = specialDay;
   }
 
   public String getSpeakersAsCommaSeparatedList()
