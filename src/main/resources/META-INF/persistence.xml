@@ -38,4 +38,9 @@
       <property name="hibernate.id.new_generator_mappings" value="true" />
     </properties>
   </persistence-unit>
+
+  <persistence-unit name="temp">
+    <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+  </persistence-unit>
 </persistence>

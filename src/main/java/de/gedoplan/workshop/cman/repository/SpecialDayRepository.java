@@ -1,17 +1,19 @@
 package de.gedoplan.workshop.cman.repository;
 
 import de.gedoplan.workshop.cman.entity.SpecialDay;
+import de.gedoplan.workshop.cman.qualifier.All;
 
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class SpecialDayRepository
 {
-  @PersistenceContext(unitName = "default")
+  @Inject
   EntityManager entityManager;
 
   public void persist(SpecialDay entity)
@@ -34,6 +36,8 @@ public class SpecialDayRepository
     return this.entityManager.find(SpecialDay.class, id);
   }
 
+  @Produces
+  @All
   public List<SpecialDay> findAll()
   {
     return this.entityManager.createQuery("select x from SpecialDay x", SpecialDay.class).getResultList();
