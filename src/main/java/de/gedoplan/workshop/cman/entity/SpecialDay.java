@@ -13,7 +13,7 @@ public class SpecialDay extends StringIdEntity
     this.name = name;
   }
 
-  protected SpecialDay()
+  public SpecialDay()
   {
   }
 
@@ -25,12 +25,6 @@ public class SpecialDay extends StringIdEntity
   public void setName(String name)
   {
     this.name = name;
-  }
-
-  @Override
-  public void setId(String id)
-  {
-    super.setId(id);
   }
 
 }

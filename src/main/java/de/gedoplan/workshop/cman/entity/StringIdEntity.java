@@ -24,7 +24,7 @@ public abstract class StringIdEntity extends SingleIdEntity<String>
     return this.id;
   }
 
-  protected void setId(String id)
+  public void setId(String id)
   {
     this.id = id;
   }

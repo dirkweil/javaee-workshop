@@ -48,5 +48,4 @@ public class TalkEditModel
   {
     return this.specialDays;
   }
-
 }
