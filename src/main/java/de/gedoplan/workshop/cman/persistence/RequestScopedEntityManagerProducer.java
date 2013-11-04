@@ -1,5 +1,6 @@
 package de.gedoplan.workshop.cman.persistence;
 
+import javax.annotation.Priority;
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Alternative;
@@ -11,8 +12,12 @@ import javax.persistence.PersistenceUnit;
 
 @ApplicationScoped
 @Alternative
+@Priority(1000)
 public class RequestScopedEntityManagerProducer
 {
+  //  @PersistenceContext(unitName = "default", synchronization=SynchronizationType.UNSYNCHRONIZED)
+  //  EntityManager entityManager;
+
   @PersistenceUnit(unitName = "default")
   EntityManagerFactory entityManagerFactory;
 
