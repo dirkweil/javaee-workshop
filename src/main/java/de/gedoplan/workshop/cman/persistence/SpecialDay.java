@@ -1,33 +1,20 @@
 package de.gedoplan.workshop.cman.persistence;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
-public class SpecialDay
+public class SpecialDay extends StringIdEntity
 {
-  @Id
-  private String id;
   private String name;
 
   public SpecialDay(String id, String name)
   {
-    this.id = id;
+    super(id);
     this.name = name;
   }
 
   public SpecialDay()
   {
-  }
-
-  public String getId()
-  {
-    return this.id;
-  }
-
-  public void setId(String id)
-  {
-    this.id = id;
   }
 
   public String getName()
