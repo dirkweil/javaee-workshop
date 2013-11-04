@@ -1,24 +1,29 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
 
-<h:head></h:head> 
+<h:head></h:head>
 <h:body>
 
-  <h2>Special Days</h2> 
-  
-  <h:dataTable value="#{specialDayModel.specialDays}" var="specialDay" rules="all">
-    <h:column>
-      <f:facet name="header">Id</f:facet>
-      <h:outputText value="${specialDay.id}" />
-    </h:column>
-    <h:column>
-      <f:facet name="header">Name</f:facet>
-      <h:outputText value="${specialDay.name}" />
-    </h:column>
-  </h:dataTable>
+  <h2>Special Days</h2>
 
-</h:body> 
+  <h:form>
+    <h:dataTable value="#{specialDayModel.specialDays}" var="specialDay" rules="all">
+      <h:column>
+        <f:facet name="header">Id</f:facet>
+        <h:inputText value="${specialDay.id}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Name</f:facet>
+        <h:inputText value="${specialDay.name}" />
+      </h:column>
+    </h:dataTable>
+    
+    <h:commandButton value="+" action="#{specialDayModel.addSpecialDay()}" />
+    
+    <br/>
+    
+    <h:commandButton value="ok" action="#{specialDayModel.save()}"/>
+  </h:form>
+
+</h:body>
 </html>
