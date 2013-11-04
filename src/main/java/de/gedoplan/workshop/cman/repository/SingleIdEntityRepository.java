@@ -66,16 +66,19 @@ public abstract class SingleIdEntityRepository<K, E extends SingleIdEntity<K>>
 
   public void persist(E entity)
   {
+    this.entityManager.joinTransaction();
     this.entityManager.persist(entity);
   }
 
   public E merge(E entity)
   {
+    this.entityManager.joinTransaction();
     return this.entityManager.merge(entity);
   }
 
   public void remove(E entity)
   {
+    this.entityManager.joinTransaction();
     this.entityManager.remove(entity);
   }
 
