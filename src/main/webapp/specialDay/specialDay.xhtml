@@ -9,7 +9,7 @@
 
   <h2>Special Days</h2> 
   
-  <h:dataTable value="#{specialDayModel.specialDays}" var="specialDay">
+  <h:dataTable value="#{specialDayModel.specialDays}" var="specialDay" rules="all">
     <h:column>
       <f:facet name="header">Id</f:facet>
       <h:outputText value="${specialDay.id}" />

@@ -3,13 +3,15 @@ package de.gedoplan.workshop.cman.persistence;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class SpecialDayRepository
 {
-  @PersistenceContext(unitName = "default")
+  @Inject
+  @Default
   EntityManager entityManager;
 
   public void persist(SpecialDay entity)
