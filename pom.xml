@@ -73,6 +73,7 @@
         <groupId>org.apache.deltaspike.core</groupId>
         <artifactId>deltaspike-core-impl</artifactId>
         <version>0.4</version>
+        <scope>runtime</scope>
       </dependency>
 
       <dependency>

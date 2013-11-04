@@ -31,13 +31,11 @@
       </h:inputText>
       <h:message for="duration"/>
 
-<!-- 
       <h:outputLabel for="specialDay" value="Special Day:" />
       <h:selectOneRadio id="specialDay" value="#{talkEditModel.talk.specialDay}">
         <f:selectItems value="#{talkEditModel.specialDays}" var="specialDay" itemLabel="#{specialDay.name}"  />
       </h:selectOneRadio>
       <h:message for="specialDay"/>
- -->
     </h:panelGrid>
 
     <h:commandButton value="ok" action="#{talkEditModel.save()}" />

@@ -7,6 +7,9 @@ public class SpecialDay extends StringIdEntity
 {
   private String name;
 
+  //  @OneToMany(mappedBy = "specialDay")
+  //  private Set<Talk> talks;
+
   public SpecialDay(String id, String name)
   {
     super(id);
