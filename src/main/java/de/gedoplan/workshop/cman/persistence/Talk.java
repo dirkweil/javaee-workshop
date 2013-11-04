@@ -11,10 +11,14 @@ import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Talk extends GeneratedIntegerIdEntity
 {
+  @NotNull
+  @Size(min = 5)
   private String       title;
 
   @ElementCollection(fetch = FetchType.EAGER)
