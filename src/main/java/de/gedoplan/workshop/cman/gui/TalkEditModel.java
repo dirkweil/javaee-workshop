@@ -3,6 +3,7 @@ package de.gedoplan.workshop.cman.gui;
 import de.gedoplan.workshop.cman.persistence.Current;
 import de.gedoplan.workshop.cman.persistence.Talk;
 import de.gedoplan.workshop.cman.persistence.TalkRepository;
+import de.gedoplan.workshop.cman.persistence.TalkType;
 
 import javax.enterprise.inject.Model;
 import javax.faces.flow.FlowScoped;
@@ -28,6 +29,11 @@ public class TalkEditModel
   {
     this.talkRepository.merge(this.talk);
     return "exit";
+  }
+
+  public TalkType[] getTalkTypes()
+  {
+    return TalkType.values();
   }
 
 }
