@@ -31,11 +31,8 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   
 
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-
-Veranstaltung  Branch
-
-W-JAX 2013     wjax2013
-JAX 2014       jax2014
+- W-JAX 2013: Branch wjax2013
+- JAX 2014: Branch jax2014
 
 Bitte checken Sie zur Veorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
   
