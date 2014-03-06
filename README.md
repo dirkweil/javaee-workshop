@@ -1,7 +1,7 @@
-Power Workshop Java EE 7
+Java EE 7 - Workshop
 ========================
 
-Dies ist das Begleitprojekt zum Workshop am 04.11.2013 im Rahmen der W-JAX 2013.
+Dies ist das Begleitprojekt zum Workshop Java EE 6/7.
 
 Zum Mitmachen benötigen Sie die folgenden Dinge:
 
@@ -26,9 +26,19 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Maven-Projekte) nicht korrekt. Wenn nach dem Import der Projekte Validierungsfehler (z. B. "JPA Problem") angezeigt werden, sollten Sie die Validatoren deaktiviern 
   (Window -> Preferences -> Validation: Disable All).
 
-- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.0.0.Beta1). Wir werden im Workshop diesen Server einsetzen. Generell ist aber jeder 
+- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.0.0.Final). Wir werden im Workshop diesen Server einsetzen. Generell ist aber jeder 
   Java-EE-7-Server geeignet.
   
+
+Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
+
+Veranstaltung  Branch
+
+W-JAX 2013     wjax2013
+JAX 2014       jax2014
+
+Bitte checken Sie zur Veorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
   
-Bis zum 04.11. - ich freue mich auf Sie!
+Fragen können währen der Veranstaltung natürlich jederzeit gestellt werden und nachher gerne an dirk.weil(at)gedoplan.de.
+
 Dirk Weil   

@@ -6,7 +6,7 @@
   version="2.0">
  -->
   <persistence-unit name="default">
-    <jta-data-source>datasource/jax</jta-data-source>
+    <jta-data-source>datasource/conference</jta-data-source>
     <properties>
       <!-- Schemagenerierung -->
 <!-- 
@@ -24,7 +24,7 @@
 
       <!-- Logging level -->
       <!-- EclipseLink: FINE logs SQL commands -->
-      <property name="eclipselink.logging.level" value="FINE" />
+      <property name="eclipselink.logging.level" value="OFF" />
       <property name="eclipselink.logging.connection" value="false" />
       <property name="eclipselink.logging.parameters" value="true" />
       <property name="eclipselink.logging.session" value="false" />
@@ -37,5 +37,13 @@
       <!-- Hibernate: Use new id generator -->
       <property name="hibernate.id.new_generator_mappings" value="true" />
     </properties>
+  </persistence-unit>
+  
+  <persistence-unit name="temp">
+    <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+    <!-- 
+    <class>fully.qualified.Class</class>
+     -->
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
   </persistence-unit>
 </persistence>

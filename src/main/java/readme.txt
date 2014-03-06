@@ -1,1 +1,0 @@
-Verzeichnis für Anwendungs-Sourcen
