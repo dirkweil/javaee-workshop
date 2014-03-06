@@ -1,3 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ <navigation-rule>
+  <from-view-id>/schiffe.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>edit</from-outcome>
+   <to-view-id>/schiffEdit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/schiffEdit.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>ok</from-outcome>
+   <to-view-id>/schiffe.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <application/>
 </faces-config>

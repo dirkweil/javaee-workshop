@@ -2,4 +2,21 @@
 <PROCESS model-entity="JSFProcess">
  <PROCESS-ITEM NAME="rules:#talk.xhtml" PATH="/talk.xhtml"
   SHAPE="139,191,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+ <PROCESS-ITEM NAME="rules:#schiffe.xhtml" PATH="/schiffe.xhtml"
+  SHAPE="102,44,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#schiffe.xhtml:0" NAME="item"
+   PATH="/schiffe.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="edit::#schiffEdit.xhtml" NAME="output"
+    PATH="/schiffEdit.xhtml" TARGET="rules:#schiffEdit.xhtml"
+    TITLE="edit" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#schiffEdit.xhtml" PATH="/schiffEdit.xhtml"
+  SHAPE="350,62,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#schiffEdit.xhtml:0" NAME="item"
+   PATH="/schiffEdit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="ok::#schiffe.xhtml" NAME="output"
+    PATH="/schiffe.xhtml" TARGET="rules:#schiffe.xhtml" TITLE="ok" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>
