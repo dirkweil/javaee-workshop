@@ -7,7 +7,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 
 - Einen PC (;-). Das Betriebssystem ist generell zweitrangig. Ich habe allerdings nur Erfahrungen mit Windows und (ein wenig) mit Linux. Zu MacOS kann ich nichts sagen.
 
-- Ein installiertes JSDK. Wir benötigen Java 7 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html, derzeitige Version 1.7.0_40)
+- Ein installiertes JSDK. Wir benötigen Java 7 oder 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html, derzeitige Version 8u5)
 
 - Einen Git-Client, z. B. Git Bash (Download: http://git-scm.com/downloads)
 
