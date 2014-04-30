@@ -6,7 +6,7 @@
   version="2.0">
  -->
   <persistence-unit name="default">
-    <jta-data-source>datasource/jax</jta-data-source>
+    <jta-data-source>jdbc/seminar</jta-data-source>
     <properties>
       <!-- Schemagenerierung -->
 <!-- 
