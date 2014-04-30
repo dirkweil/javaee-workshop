@@ -16,6 +16,7 @@ public class FertigungsAuftragModel
 
   public List<FertigungsAuftrag> getFertigungsAuftaege()
   {
+    // TODO: Direkter Durchgriff ist ungünstig; besser nur einmal und cachen
     return this.fertigungsauftragRepository.findAll();
   }
 }
