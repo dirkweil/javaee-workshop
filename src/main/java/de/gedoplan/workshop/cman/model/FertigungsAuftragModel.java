@@ -1,10 +1,11 @@
 package de.gedoplan.workshop.cman.model;
 
 import de.gedoplan.workshop.cman.entity.FertigungsAuftrag;
-import de.gedoplan.workshop.cman.repository.FertigungsauftragRepository;
+import de.gedoplan.workshop.cman.repository.FertigungsAuftragRepository;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
@@ -12,11 +13,18 @@ import javax.inject.Inject;
 public class FertigungsAuftragModel
 {
   @Inject
-  FertigungsauftragRepository fertigungsauftragRepository;
+  FertigungsAuftragRepository     fertigungsAuftragRepository;
 
-  public List<FertigungsAuftrag> getFertigungsAuftaege()
+  private List<FertigungsAuftrag> fertigungsAuftraege;
+
+  @PostConstruct
+  private void init()
   {
-    // TODO: Direkter Durchgriff ist ungünstig; besser nur einmal und cachen
-    return this.fertigungsauftragRepository.findAll();
+    this.fertigungsAuftraege = this.fertigungsAuftragRepository.findAll();
+  }
+
+  public List<FertigungsAuftrag> getFertigungsAuftraege()
+  {
+    return this.fertigungsAuftraege;
   }
 }

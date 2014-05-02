@@ -10,7 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @ApplicationScoped
-public class FertigungsauftragRepository
+public class FertigungsAuftragRepository
 {
   @PersistenceContext(unitName = "default")
   EntityManager entityManager;

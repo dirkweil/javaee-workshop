@@ -1,7 +1,7 @@
 package de.gedoplan.workshop.cman.rest;
 
 import de.gedoplan.workshop.cman.entity.FertigungsAuftrag;
-import de.gedoplan.workshop.cman.repository.FertigungsauftragRepository;
+import de.gedoplan.workshop.cman.repository.FertigungsAuftragRepository;
 
 import java.util.List;
 
@@ -15,13 +15,13 @@ import javax.ws.rs.core.MediaType;
 public class FertigungsAuftragRestService
 {
   @Inject
-  FertigungsauftragRepository fertigungsauftragRepository;
+  FertigungsAuftragRepository fertigungsAuftragRepository;
 
   @GET
   @Produces(MediaType.APPLICATION_JSON)
-  public List<FertigungsAuftrag> getFertigungsAuftaege()
+  public List<FertigungsAuftrag> getFertigungsAuftraege()
   {
-    return this.fertigungsauftragRepository.findAll();
+    return this.fertigungsAuftragRepository.findAll();
   }
 
 }
