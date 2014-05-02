@@ -1,15 +1,15 @@
-Power Workshop Java EE 7
-========================
+Demo-Projekt zum Thema Java EE 6/7
+==================================
 
-Dies ist das Begleitprojekt zum Workshop am 12.05.2014 im Rahmen der JAX 2014.
+Dies ist ein Demoprojekt, das einige Features der Softwareentwicklung mit Java EE 6 bzw. 7 zeigt.
 
-Zum Mitmachen benötigen Sie die folgenden Dinge:
+Zum Nachvollziehen benötigen Sie die folgenden Dinge:
 
 - Einen PC (;-). Das Betriebssystem ist generell zweitrangig. Ich habe allerdings nur Erfahrungen mit Windows und (ein wenig) mit Linux. Zu MacOS kann ich nichts sagen.
 
 - Ein installiertes JSDK. Wir benötigen Java 7 oder 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html, derzeitige Version 8u5)
 
-- Einen Git-Client, z. B. Git Bash (Download: http://git-scm.com/downloads)
+- Falls Sie dieses Repository clonen wollen: Einen Git-Client, z. B. Git Bash (Download: http://git-scm.com/downloads). Sie können die Quellen aber auch einfach von hier herunterladen.
 
 - Maven 3.0.x (Download: http://maven.apache.org/download.html)
 
@@ -26,9 +26,6 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Maven-Projekte) nicht korrekt. Wenn nach dem Import der Projekte Validierungsfehler (z. B. "JPA Problem") angezeigt werden, sollten Sie die Validatoren deaktiviern 
   (Window -> Preferences -> Validation: Disable All).
 
-- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.0.0.Final). Wir werden im Workshop diesen Server einsetzen. Generell ist aber jeder 
-  Java-EE-7-Server geeignet.
-  
-  
-Bis zum 12.05. - ich freue mich auf Sie!
+- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.1.0.CR1). Generell ist aber jeder Java-EE-7-Server geeignet.
+
 Dirk Weil   
