@@ -31,7 +31,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   
 
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Initial ist der Branch jax14 identisch, wird aber im Workshop
-mit des konkret entwickelten Software stückweise gefüllt.
+mit der konkret entwickelten Software stückweise gefüllt.
 
 Bitte checken Sie zur Vorbereitung den Branch jax14 aus, wenn Sie direkt mitmachen wollen.
   
