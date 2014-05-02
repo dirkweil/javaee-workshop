@@ -6,7 +6,7 @@
   <h2>Talks</h2>
 
   <h:form>
-    <p:dataTable value="#{talkModel.talks}" var="talk">
+    <p:dataTable value="#{talkPresenter.talks}" var="talk">
       <p:column>
         <f:facet name="header">Title</f:facet>
         <h:outputText value="#{talk.title}" />
@@ -16,11 +16,11 @@
         <h:outputText value="#{talk.start}" />
       </p:column>
       <p:column>
-        <h:commandButton value="edit" action="#{talkModel.editTalk(talk)}" />
+        <h:commandButton value="edit" action="#{talkPresenter.editTalk(talk)}" />
       </p:column>
     </p:dataTable>
     
-    <h:commandButton value="+" action="#{talkModel.createTalk()}" />
+    <h:commandButton value="+" action="#{talkPresenter.createTalk()}" />
     <p/>
     
     <h:commandButton value="ok" action="/index.xhtml" />

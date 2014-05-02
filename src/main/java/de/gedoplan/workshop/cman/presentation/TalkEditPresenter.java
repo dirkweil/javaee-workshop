@@ -1,11 +1,11 @@
-package de.gedoplan.workshop.cman.model;
+package de.gedoplan.workshop.cman.presentation;
 
 import de.gedoplan.workshop.cman.entity.SpecialDay;
 import de.gedoplan.workshop.cman.entity.Talk;
 import de.gedoplan.workshop.cman.entity.TalkType;
+import de.gedoplan.workshop.cman.persistence.TalkRepository;
 import de.gedoplan.workshop.cman.qualifier.All;
 import de.gedoplan.workshop.cman.qualifier.Current;
-import de.gedoplan.workshop.cman.repository.TalkRepository;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import javax.inject.Inject;
 
 @Model
 @FlowScoped("talkEdit")
-public class TalkEditModel
+public class TalkEditPresenter
 {
   @Inject
   @Current

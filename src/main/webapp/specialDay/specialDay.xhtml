@@ -6,7 +6,7 @@
   <h2>Special Days</h2>
 
   <h:form>
-    <p:dataTable value="#{specialDayModel.specialDays}" var="specialDay">
+    <p:dataTable value="#{specialDayPresenter.specialDays}" var="specialDay">
       <p:column>
         <f:facet name="header">Id</f:facet>
         <h:inputText value="#{specialDay.id}" />
@@ -17,11 +17,11 @@
       </p:column>
     </p:dataTable>
     
-    <h:commandButton value="+" action="#{specialDayModel.addNewSpecialDay()}" />
+    <h:commandButton value="+" action="#{specialDayPresenter.addNewSpecialDay()}" />
     
     <p/>
     
-    <h:commandButton value="ok" action="#{specialDayModel.save()}" />
+    <h:commandButton value="ok" action="#{specialDayPresenter.save()}" />
   </h:form>
 </h:body>
 </html>

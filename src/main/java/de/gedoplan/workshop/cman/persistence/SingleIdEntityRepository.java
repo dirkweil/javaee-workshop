@@ -1,4 +1,4 @@
-package de.gedoplan.workshop.cman.repository;
+package de.gedoplan.workshop.cman.persistence;
 
 import de.gedoplan.workshop.cman.entity.SingleIdEntity;
 

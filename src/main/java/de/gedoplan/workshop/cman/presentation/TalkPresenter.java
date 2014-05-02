@@ -1,8 +1,8 @@
-package de.gedoplan.workshop.cman.model;
+package de.gedoplan.workshop.cman.presentation;
 
 import de.gedoplan.workshop.cman.entity.Talk;
+import de.gedoplan.workshop.cman.persistence.TalkRepository;
 import de.gedoplan.workshop.cman.qualifier.Current;
-import de.gedoplan.workshop.cman.repository.TalkRepository;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 
 @Model
-public class TalkModel implements Serializable
+public class TalkPresenter implements Serializable
 {
   private static final long serialVersionUID = 1L;
 

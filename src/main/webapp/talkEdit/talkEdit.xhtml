@@ -6,39 +6,39 @@
   <h:form>
     <h:panelGrid columns="3">
       <h:outputLabel for="title" value="Title:" />
-      <h:inputText id="title" value="#{talkEditModel.talk.title}" />
+      <h:inputText id="title" value="#{talkEditPresenter.talk.title}" />
       <h:message for="title"/>
 
       <h:outputLabel for="speaker" value="Speaker:" />
-      <h:inputText id="speaker" value="#{talkEditModel.talk.speakersAsCommaSeparatedList}" />
+      <h:inputText id="speaker" value="#{talkEditPresenter.talk.speakersAsCommaSeparatedList}" />
       <h:message for="speaker"/>
 
       <h:outputLabel for="talkType" value="Type:" />
-      <h:selectOneMenu id="talkType" value="#{talkEditModel.talk.talkType}">
-        <f:selectItems value="#{talkEditModel.talkTypes}" />
+      <h:selectOneMenu id="talkType" value="#{talkEditPresenter.talk.talkType}">
+        <f:selectItems value="#{talkEditPresenter.talkTypes}" />
       </h:selectOneMenu>
       <h:message for="talkType"/>
 
       <h:outputLabel for="start" value="Start:" />
-      <h:inputText id="start" value="#{talkEditModel.talk.start}">
+      <h:inputText id="start" value="#{talkEditPresenter.talk.start}">
         <f:convertDateTime pattern="dd.MM.yy HH:mm" />
       </h:inputText>
       <h:message for="start"/>
 
       <h:outputLabel for="duration" value="Duration:" />
-      <h:inputText id="duration" value="#{talkEditModel.talk.duration}">
+      <h:inputText id="duration" value="#{talkEditPresenter.talk.duration}">
         <f:convertDateTime pattern="HH:mm" />
       </h:inputText>
       <h:message for="duration"/>
 
       <h:outputLabel for="specialDay" value="Special Day:" />
-      <h:selectOneRadio id="specialDay" value="#{talkEditModel.talk.specialDay}">
-        <f:selectItems value="#{talkEditModel.specialDays}" var="specialDay" itemLabel="#{specialDay.name}"  />
+      <h:selectOneRadio id="specialDay" value="#{talkEditPresenter.talk.specialDay}">
+        <f:selectItems value="#{talkEditPresenter.specialDays}" var="specialDay" itemLabel="#{specialDay.name}"  />
       </h:selectOneRadio>
       <h:message for="specialDay"/>
     </h:panelGrid>
 
-    <h:commandButton value="ok" action="#{talkEditModel.save()}" />
+    <h:commandButton value="ok" action="#{talkEditPresenter.save()}" />
     <h:commandButton value="cancel" action="exit" immediate="true" />
   </h:form>
 

@@ -1,8 +1,8 @@
-package de.gedoplan.workshop.cman.model;
+package de.gedoplan.workshop.cman.presentation;
 
 import de.gedoplan.workshop.cman.entity.SpecialDay;
+import de.gedoplan.workshop.cman.persistence.SpecialDayRepository;
 import de.gedoplan.workshop.cman.qualifier.All;
-import de.gedoplan.workshop.cman.repository.SpecialDayRepository;
 
 import java.io.Serializable;
 import java.util.List;
@@ -13,7 +13,7 @@ import javax.inject.Named;
 
 @Named
 @FlowScoped("specialDay")
-public class SpecialDayModel implements Serializable
+public class SpecialDayPresenter implements Serializable
 {
   private static final long serialVersionUID = 1L;
 

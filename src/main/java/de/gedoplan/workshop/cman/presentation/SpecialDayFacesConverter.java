@@ -1,7 +1,7 @@
-package de.gedoplan.workshop.cman.model;
+package de.gedoplan.workshop.cman.presentation;
 
 import de.gedoplan.workshop.cman.entity.SpecialDay;
-import de.gedoplan.workshop.cman.repository.SpecialDayRepository;
+import de.gedoplan.workshop.cman.persistence.SpecialDayRepository;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
