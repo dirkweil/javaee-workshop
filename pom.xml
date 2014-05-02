@@ -35,6 +35,13 @@
 
   <properties>
     <checkstyle.config>GEDOPLAN_SEMINAR</checkstyle.config>
+    
+    <commonslogging.version>1.1.1</commonslogging.version>
+    <deltaspike.version>0.5</deltaspike.version>
+    <junit.version>4.11</junit.version>
+    <log4j.version>1.2.16</log4j.version>
+    <primefaces.version>4.0</primefaces.version>
+    <slf4j.version>1.5.6</slf4j.version>
   </properties>
 
   <dependencyManagement>
@@ -42,7 +49,7 @@
       <dependency>
         <groupId>commons-logging</groupId>
         <artifactId>commons-logging</artifactId>
-        <version>1.1.1</version>
+        <version>${commonslogging.version}</version>
       </dependency>
 
       <dependency>
@@ -54,50 +61,50 @@
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.8.2</version>
+        <version>${junit.version}</version>
       </dependency>
 
       <dependency>
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
-        <version>1.2.16</version>
+        <version>${log4j.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.apache.deltaspike.core</groupId>
         <artifactId>deltaspike-core-api</artifactId>
-        <version>0.4</version>
+        <version>${deltaspike.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.apache.deltaspike.core</groupId>
         <artifactId>deltaspike-core-impl</artifactId>
-        <version>0.4</version>
+        <version>${deltaspike.version}</version>
         <scope>runtime</scope>
       </dependency>
 
       <dependency>
         <groupId>org.primefaces</groupId>
         <artifactId>primefaces</artifactId>
-        <version>3.1.1</version>
+        <version>${primefaces.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-api</artifactId>
-        <version>1.5.6</version>
+        <version>${slf4j.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-simple</artifactId>
-        <version>1.5.6</version>
+        <version>${slf4j.version}</version>
       </dependency>
 
       <dependency>
         <groupId>org.slf4j</groupId>
         <artifactId>slf4j-log4j12</artifactId>
-        <version>1.5.6</version>
+        <version>${slf4j.version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -107,6 +114,7 @@
   </build>
 
   <dependencies>
+    <!-- Diese Dependency immer am Anfang stehen lassen, damit die Java-EE-Klassen vorne im Classpath liegen. -->
     <dependency>
       <groupId>javax</groupId>
       <artifactId>javaee-api</artifactId>

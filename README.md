@@ -26,7 +26,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Maven-Projekte) nicht korrekt. Wenn nach dem Import der Projekte Validierungsfehler (z. B. "JPA Problem") angezeigt werden, sollten Sie die Validatoren deaktiviern 
   (Window -> Preferences -> Validation: Disable All).
 
-- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.0.0.Final). Wir werden im Workshop diesen Server einsetzen. Generell ist aber jeder 
+- WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.1.0.CR1). Wir werden im Workshop diesen Server einsetzen. Generell ist aber jeder 
   Java-EE-7-Server geeignet.
   
 
@@ -36,6 +36,6 @@ Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Wo
 
 Bitte checken Sie zur Veorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
   
-Fragen können währen der Veranstaltung natürlich jederzeit gestellt werden und nachher gerne an dirk.weil(at)gedoplan.de.
+Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und nachher gerne an dirk.weil(at)gedoplan.de.
 
 Dirk Weil   
