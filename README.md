@@ -29,6 +29,10 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 - WildFly 8 (Download http://www.wildfly.org/downloads/, derzeitige Version 8.1.0.CR1). Wir setzen im Workshop diesen Server ein. Generell ist aber jeder 
   Java-EE-7-Server geeignet.
   
+- Recht praktisch zum Verfolgen der Änderungen in der Datenbank ist ein DB-Tool. Grundsätzlich sind viele Tools gut geeignet. Ich setze gern
+  SQL Workbench/J ein (http://www.sql-workbench.net). Im Workshop werden wir die H2-Datenbank nutzen, die auch mit einer eigenen, allerdings
+  teilweise etwas sperrigen GUI ausgestattet ist.
+  
 
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Initial ist der Branch jax14 identisch, wird aber im Workshop
 mit der konkret entwickelten Software stückweise gefüllt.
