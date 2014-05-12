@@ -1,35 +1,20 @@
 package de.gedoplan.workshop.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
-import javax.persistence.Id;
 
 @Entity
-public class SpecialDay implements Serializable
+public class SpecialDay extends StringIdEntity
 {
-  @Id
-  private String id;
   private String name;
 
   public SpecialDay(String id, String name)
   {
-    this.id = id;
+    super(id);
     this.name = name;
   }
 
   public SpecialDay()
   {
-  }
-
-  public String getId()
-  {
-    return this.id;
-  }
-
-  public void setId(String id)
-  {
-    this.id = id;
   }
 
   public String getName()
@@ -41,11 +26,4 @@ public class SpecialDay implements Serializable
   {
     this.name = name;
   }
-
-  @Override
-  public String toString()
-  {
-    return "SpecialDay [id=" + this.id + ", name=" + this.name + "]";
-  }
-
 }
