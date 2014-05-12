@@ -1,10 +1,12 @@
 package de.gedoplan.workshop.domain;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class SpecialDay
+public class SpecialDay implements Serializable
 {
   @Id
   private String id;
