@@ -7,12 +7,14 @@ import de.gedoplan.workshop.qualifier.All;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.enterprise.context.SessionScoped;
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-@SessionScoped
+@FlowScoped("specialDay")
 public class SpecialDayPresenter implements Serializable
 {
   @Inject
@@ -27,11 +29,19 @@ public class SpecialDayPresenter implements Serializable
     return this.specialDays;
   }
 
-  //  @PostConstruct
-  //  void init()
-  //  {
-  //    this.specialDays = this.specialDayRepository.findAll();
-  //  }
+  @PostConstruct
+  void init()
+  {
+    //      this.specialDays = this.specialDayRepository.findAll();
+
+    System.out.println("Enter flow");
+  }
+
+  @PreDestroy
+  void cleanup()
+  {
+    System.out.println("Leave flow");
+  }
 
   public String save()
   {
@@ -43,7 +53,7 @@ public class SpecialDayPresenter implements Serializable
       }
     }
 
-    return null;
+    return "exit";
   }
 
   public void addSpecialDay()
