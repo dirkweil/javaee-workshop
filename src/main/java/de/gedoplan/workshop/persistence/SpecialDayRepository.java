@@ -8,8 +8,12 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 @ApplicationScoped
+//@Stateless
+@Transactional(value = TxType.REQUIRED)
 public class SpecialDayRepository
 {
   //  @PersistenceContext(unitName = "default")

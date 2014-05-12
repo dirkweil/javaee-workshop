@@ -30,4 +30,14 @@ public class SpecialDayPresenter
     this.specialDays = this.specialDayRepository.findAll();
   }
 
+  public String save()
+  {
+    for (SpecialDay specialDay : this.specialDays)
+    {
+      this.specialDayRepository.merge(specialDay);
+    }
+
+    return null;
+  }
+
 }
