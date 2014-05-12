@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head></h:head> 
+<body> 
+  <h2>Special Days</h2>
+  
+  <h:dataTable value="#{specialDayPresenter.specialDays}" var="sd">
+    <h:column>
+      <h:outputText value="#{sd.id}" />
+    </h:column>
+    <h:column>
+      <h:outputText value="#{sd.name}" />
+    </h:column>
+  </h:dataTable>
+
+</body> 
+</html>
