@@ -9,16 +9,16 @@
 <body> 
   <h2>Special Days</h2>
   
-  <p:dataTable value="#{specialDayPresenter.specialDays}" var="sd">
-    <p:column>
+  <h:dataTable value="#{specialDayPresenter.specialDays}" var="sd">
+    <h:column>
       <f:facet name="header">Id</f:facet>
       <h:outputText value="#{sd.id}" />
-    </p:column>
-    <p:column>
+    </h:column>
+    <h:column>
       <f:facet name="header">Name</f:facet>
       <h:outputText value="#{sd.name}" />
-    </p:column>
-  </p:dataTable>
+    </h:column>
+  </h:dataTable>
 
 </body> 
 </html>

@@ -5,19 +5,29 @@ import de.gedoplan.workshop.persistence.SpecialDayRepository;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
+@RequestScoped
 public class SpecialDayPresenter
 {
   @Inject
-  SpecialDayRepository specialDayRepository;
+  SpecialDayRepository     specialDayRepository;
+
+  private List<SpecialDay> specialDays;
 
   public List<SpecialDay> getSpecialDays()
   {
-    // TODO: Nicht gut!
-    return this.specialDayRepository.findAll();
+    return this.specialDays;
+  }
+
+  @PostConstruct
+  void init()
+  {
+    this.specialDays = this.specialDayRepository.findAll();
   }
 
 }
