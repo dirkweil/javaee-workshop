@@ -12,6 +12,7 @@ import javax.annotation.PreDestroy;
 import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 @Named
 @FlowScoped("specialDay")
@@ -43,6 +44,8 @@ public class SpecialDayPresenter implements Serializable
     System.out.println("Leave flow");
   }
 
+  // TODO: Besser als separaten Service
+  @Transactional
   public String save()
   {
     for (SpecialDay specialDay : this.specialDays)
