@@ -1,10 +1,13 @@
 package de.gedoplan.workshop.persistence;
 
 import de.gedoplan.workshop.domain.SpecialDay;
+import de.gedoplan.workshop.qualifier.All;
 
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -18,6 +21,7 @@ public class SpecialDayRepository
 {
   //  @PersistenceContext(unitName = "default")
   @Inject
+  @Default
   EntityManager entityManager;
 
   public void persist(SpecialDay entity)
@@ -40,6 +44,8 @@ public class SpecialDayRepository
     this.entityManager.remove(entity);
   }
 
+  @Produces
+  @All
   public List<SpecialDay> findAll()
   {
     TypedQuery<SpecialDay> query = this.entityManager.createQuery("select object(sd) from SpecialDay sd ", SpecialDay.class);
