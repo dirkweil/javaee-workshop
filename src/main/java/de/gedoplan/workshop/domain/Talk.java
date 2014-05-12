@@ -22,7 +22,7 @@ public class Talk extends GeneratedIntegerIdEntity
   @Size(min = 5)
   private String       title;
 
-  @ElementCollection(fetch = FetchType.EAGER)
+  @ElementCollection(fetch = FetchType.LAZY)
   private List<String> speakers;
 
   //  @Enumerated(EnumType.STRING)
