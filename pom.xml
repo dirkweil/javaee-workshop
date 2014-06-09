@@ -5,7 +5,7 @@
   <parent>
     <groupId>de.gedoplan</groupId>
     <artifactId>build-master</artifactId>
-    <version>7.0.12</version>
+    <version>7.0.13</version>
   </parent>
 
   <groupId>de.gedoplan.jax</groupId>
@@ -35,13 +35,14 @@
 
   <properties>
     <checkstyle.config>GEDOPLAN_SEMINAR</checkstyle.config>
-    
+
     <commonslogging.version>1.1.1</commonslogging.version>
     <deltaspike.version>0.5</deltaspike.version>
     <junit.version>4.11</junit.version>
     <log4j.version>1.2.16</log4j.version>
     <primefaces.version>4.0</primefaces.version>
     <slf4j.version>1.5.6</slf4j.version>
+    <baselibs.naming.version>1.0.10</baselibs.naming.version>
   </properties>
 
   <dependencyManagement>
@@ -106,6 +107,13 @@
         <artifactId>slf4j-log4j12</artifactId>
         <version>${slf4j.version}</version>
       </dependency>
+
+      <dependency>
+        <groupId>de.gedoplan</groupId>
+        <artifactId>baselibs-naming</artifactId>
+        <version>${baselibs.naming.version}</version>
+      </dependency>
+
     </dependencies>
   </dependencyManagement>
 
@@ -153,5 +161,51 @@
       <groupId>org.primefaces</groupId>
       <artifactId>primefaces</artifactId>
     </dependency>
+
+    <dependency>
+      <groupId>de.gedoplan</groupId>
+      <artifactId>baselibs-naming</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
+
+  <profiles>
+    <!-- Ab hier folgen Profile für verschiedene Application Server. Für Remote-Zugriffe muss genau eines davon aktiviert sein. -->
+    <profile>
+      <id>as_glassfish-4.0</id>
+
+      <properties>
+        <server.type>glassfish</server.type>
+        <server.version>4.0</server.version>
+      </properties>
+
+      <dependencies>
+        <dependency>
+          <groupId>de.gedoplan</groupId>
+          <artifactId>baselibs-glassfish</artifactId>
+          <version>4.0_2</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+    <profile>
+      <id>as_wildfly-8.1</id>
+
+      <properties>
+        <server.type>wildfly</server.type>
+        <server.version>8.1.0.Final</server.version>
+      </properties>
+
+      <dependencies>
+        <dependency>
+          <groupId>de.gedoplan</groupId>
+          <artifactId>baselibs-wildfly</artifactId>
+          <version>8.1.0_01</version>
+          <scope>test</scope>
+        </dependency>
+      </dependencies>
+    </profile>
+
+  </profiles>
 </project>
