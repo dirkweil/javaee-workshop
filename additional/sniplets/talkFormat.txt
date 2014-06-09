@@ -1,0 +1,4 @@
+      System.out.printf("  %tR: %s, %s\n", talk.getStart(), talk.getSpeakersAsCommaSeparatedList(), talk.getTitle());
+
+      System.out.printf("Next talk: %tF %tR: %s, %s\n", talk.getStart(), talk.getStart(), talk.getSpeakersAsCommaSeparatedList(), talk.getTitle());
+      

@@ -1,0 +1,12 @@
+    // Anmeldung am JNDI
+    Context jndiCtx = JNDIContextFactory.getInitialContext(null, null, null);
+
+    // Lookup-Namen der Bean bestimmen
+    // Die hier genutzte Helfer-Methode baut den Namen serverabhängig zusammen. Für Server, die die Java EE 6 vollständig unterstützen,
+    // kann alternativ der standardisierte globale JNDI-Name verwendet werden.
+    String lookupName = LookupHelper.getEjbLookupName(TalkAnnouncementRemote.class, null, "javaee-workshop", "TalkAnnouncement");
+    // String lookupName = "java:global/javaee-workshop/DailyAnnouncement!de.gedoplan.workshop.service.DailyAnnouncementRemote";
+    System.out.println("Lookup-Name: " + lookupName);
+
+    // Lookup der Bean
+    TalkAnnouncementRemote remoteObj = (TalkAnnouncementRemote) jndiCtx.lookup(lookupName);
