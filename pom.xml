@@ -43,6 +43,12 @@
     <primefaces.version>4.0</primefaces.version>
     <slf4j.version>1.5.6</slf4j.version>
     <baselibs.naming.version>1.0.10</baselibs.naming.version>
+    <eclipselink.groupId>org.eclipse.persistence</eclipselink.groupId>
+    <eclipselink.artifactId>org.eclipse.persistence.jpa</eclipselink.artifactId>
+    <eclipselink.version>2.5.1</eclipselink.version>
+    <hibernate.groupId>org.hibernate</hibernate.groupId>
+    <hibernate.artifactId>hibernate-entitymanager</hibernate.artifactId>
+    <hibernate.version>4.3.5.Final</hibernate.version>
   </properties>
 
   <dependencyManagement>
@@ -69,6 +75,18 @@
         <groupId>log4j</groupId>
         <artifactId>log4j</artifactId>
         <version>${log4j.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>${eclipselink.groupId}</groupId>
+        <artifactId>${eclipselink.artifactId}</artifactId>
+        <version>${eclipselink.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>${hibernate.groupId}</groupId>
+        <artifactId>${hibernate.artifactId}</artifactId>
+        <version>${hibernate.version}</version>
       </dependency>
 
       <dependency>
@@ -186,6 +204,13 @@
           <version>4.0_2</version>
           <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+          <groupId>${eclipselink.groupId}</groupId>
+          <artifactId>${eclipselink.artifactId}</artifactId>
+          <scope>test</scope>
+        </dependency>
       </dependencies>
     </profile>
 
@@ -202,6 +227,12 @@
           <groupId>de.gedoplan</groupId>
           <artifactId>baselibs-wildfly</artifactId>
           <version>8.1.0_01</version>
+          <scope>test</scope>
+        </dependency>
+
+        <dependency>
+          <groupId>${hibernate.groupId}</groupId>
+          <artifactId>${hibernate.artifactId}</artifactId>
           <scope>test</scope>
         </dependency>
       </dependencies>
