@@ -12,6 +12,7 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 @Transactional
+//@Stateless
 public class TalkRepository
 {
   @Inject
