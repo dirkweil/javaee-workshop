@@ -31,10 +31,11 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   
 
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-- W-JAX 2013: Branch wjax13
-- JAX 2014: Branch jax14
+- wjax13: W-JAX 2013
+- jax14:  JAX 2014
+- fhos:   Vortrag im Rahmen der Veranstaltung KBSE an der FH Osnabrück
 
-Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
+Bitte checken Sie zur Vor- bzw. Nachbereitung den passenden Branch aus.
   
 Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und nachher gerne an dirk.weil(at)gedoplan.de.
 
