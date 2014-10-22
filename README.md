@@ -1,7 +1,7 @@
 Java EE 7 - Workshop
 ========================
 
-Dies ist das Begleitprojekt zum Workshop Java EE 6/7.
+Dies ist das Begleitprojekt zum Workshop Java EE 7 am 03.11.2014 im Rahmen der W-JAX 2014.
 
 Zum Mitmachen benötigen Sie die folgenden Dinge:
 
@@ -29,12 +29,10 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Java-EE-7-Server geeignet.
   
 
-Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-- W-JAX 2013: Branch wjax13
-- JAX 2014:   Branch jax14
-- W-JAX 2014: Branch wjax14
+Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Initial ist der Branch wjax14 identisch, wird aber im Workshop mit 
+der konkret entwickelten Software stückweise gefüllt.
 
-Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
+Bitte checken Sie zur Vorbereitung den Branch wjax14 aus, wenn Sie direkt mitmachen wollen.
   
 Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und nachher gerne an dirk.weil(at)gedoplan.de.
 
