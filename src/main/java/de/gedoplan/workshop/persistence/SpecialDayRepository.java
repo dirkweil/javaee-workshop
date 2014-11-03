@@ -36,4 +36,9 @@ public class SpecialDayRepository implements Serializable
     return query.getResultList();
   }
 
+  public SpecialDay findById(String id)
+  {
+    return this.entityManager.find(SpecialDay.class, id);
+  }
+
 }

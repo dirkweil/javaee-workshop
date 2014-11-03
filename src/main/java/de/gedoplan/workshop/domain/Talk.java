@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -31,7 +32,7 @@ public class Talk extends GeneratedIntegerIdEntity
   @Temporal(TemporalType.TIME)
   private Date         duration;
 
-  @ManyToOne
+  @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE })
   private SpecialDay   specialDay;
 
   public Talk(String title, TalkType talkType, Date start, Date duration, String... speakers)
