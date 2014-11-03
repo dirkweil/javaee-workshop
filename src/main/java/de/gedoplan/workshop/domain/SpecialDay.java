@@ -5,7 +5,7 @@ import javax.persistence.Id;
 
 @Entity
 // @Table(name="SPECIAL_DAY")
-public class SpecialDay
+public class SpecialDay extends SingleIdEntity<String>
 {
   @Id
   private String id;
@@ -42,11 +42,4 @@ public class SpecialDay
   {
     this.id = id;
   }
-
-  @Override
-  public String toString()
-  {
-    return "SpecialDay [id=" + this.id + ", name=" + this.name + "]";
-  }
-
 }
