@@ -2,15 +2,17 @@ package de.gedoplan.workshop.persistence;
 
 import de.gedoplan.workshop.domain.SpecialDay;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.transaction.Transactional;
 
-// TODO: TX-Steuerung?
-public class SpecialDayRepository
+@Transactional
+public class SpecialDayRepository implements Serializable
 {
   // @PersistenceContext(unitName = "default")
   @Inject
@@ -19,6 +21,11 @@ public class SpecialDayRepository
   public void persist(SpecialDay specialDay)
   {
     this.entityManager.persist(specialDay);
+  }
+
+  public void merge(SpecialDay specialDay)
+  {
+    this.entityManager.merge(specialDay);
   }
 
   @Produces
