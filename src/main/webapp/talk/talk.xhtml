@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+  xmlns:prime="http://primefaces.org/ui">
+
+<h:head></h:head>
+<body>
+  <h2>Talks:</h2>
+
+  <h:form>
+    <prime:dataTable value="#{talkPresenter.talks}" var="t">
+      <prime:column>
+        <f:facet name="header">Id</f:facet>
+        <h:outputText value="#{t.id}" />
+      </prime:column>
+      <prime:column>
+        <f:facet name="header">Title</f:facet>
+        <h:outputText value="#{t.title}" />
+      </prime:column>
+      <prime:column>
+        <h:commandLink action="#{talkPresenter.select(t)}" value="edit" />
+      </prime:column>
+    </prime:dataTable>
+  </h:form>
+</body>
+</html>
