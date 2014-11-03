@@ -6,6 +6,10 @@
   <PROCESS-ITEM ID="rules:*:0" NAME="item" PATH="*" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="home::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="home" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="talks::#talk.xhtml" NAME="output1"
+    PATH="/talk.xhtml" TARGET="rules:#talk.xhtml" TITLE="talks" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#talk.xhtml" PATH="/talk.xhtml"
+  SHAPE="256,289,0,0" model-entity="JSFProcessGroup"/>
 </PROCESS>

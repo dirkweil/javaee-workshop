@@ -9,7 +9,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named
-@FlowScoped("talk")
+@FlowScoped("talkEdit")
 public class TalkEditPresenter
 {
   @Inject
@@ -27,7 +27,7 @@ public class TalkEditPresenter
   public String save()
   {
     this.talkRepository.merge(this.currentTalk);
-    return "exit";
+    return "talks";
   }
 
   public TalkType[] getTalkTypes()

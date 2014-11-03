@@ -17,9 +17,9 @@ public class EntityManagerProducer
   // return this.entityManager;
   // }
 
-  @PersistenceContext(unitName = "test")
-  @Produces
-  @Test
-  EntityManager testEntityManager;
+  // @PersistenceContext(unitName = "test")
+  // @Produces
+  // @Test
+  // EntityManager testEntityManager;
 
 }
