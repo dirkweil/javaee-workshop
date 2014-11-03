@@ -1,16 +1,18 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
 
-  <h:head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <title>Java EE 7 - Workshop</title>
-  </h:head>
-  <h:body>
-    <h2>Java EE 7 - Workshop</h2>
+<h:head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Java EE 7 - Workshop</title>
+</h:head>
+<h:body>
+  <h2>Java EE 7 - Workshop</h2>
 
-<h:form>
+  <h:form>
     <h:commandLink action="specialDay" value="Special Days" />
-    <br/>
-    <h:commandLink action="/talk.xhtml?faces-redirect=true" value="Talks" />
-</h:form>
-  </h:body>
+    <br />
+    <h:commandLink action="/talk.xhtml" value="Talks" />
+    <br />
+    <h:commandLink action="#{jobPresenter.runSpecialDayImport()}" value="SpecialDay Import" />
+  </h:form>
+</h:body>
 </html>

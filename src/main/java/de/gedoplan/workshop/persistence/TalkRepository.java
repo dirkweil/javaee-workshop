@@ -19,11 +19,21 @@ public class TalkRepository implements Serializable
 
   public void persist(Talk Talk)
   {
+    /*
+     * FIXED: Bei Nutzung eines Application Managed Entity Managers muss die Verbindung zur Transaktion explizit gemacht werden.
+     * Ohne dies speicher der EM nichts ab!
+     */
+    this.entityManager.joinTransaction();
     this.entityManager.persist(Talk);
   }
 
   public void merge(Talk Talk)
   {
+    /*
+     * FIXED: Bei Nutzung eines Application Managed Entity Managers muss die Verbindung zur Transaktion explizit gemacht werden.
+     * Ohne dies speicher der EM nichts ab!
+     */
+    this.entityManager.joinTransaction();
     this.entityManager.merge(Talk);
   }
 

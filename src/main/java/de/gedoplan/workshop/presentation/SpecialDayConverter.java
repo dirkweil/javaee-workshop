@@ -9,6 +9,8 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
 
+import org.apache.deltaspike.core.api.provider.BeanProvider;
+
 @FacesConverter("SpecialDayConverter")
 public class SpecialDayConverter implements Converter
 {
@@ -23,7 +25,14 @@ public class SpecialDayConverter implements Converter
       return null;
     }
 
-    System.out.println("CCC: " + this.specialDayRepository);
+    /*
+     * FIXED: Falls die Injektion oben nicht funktioniert (da noch nicht im Standard), wird hier mit Hilfe
+     * von BeanProvider (aus der CDI-Extension DeltaSpike) die Bean programmatisch geholt.
+     */
+    if (this.specialDayRepository == null)
+    {
+      this.specialDayRepository = BeanProvider.getContextualReference(SpecialDayRepository.class);
+    }
 
     return this.specialDayRepository.findById(value);
   }

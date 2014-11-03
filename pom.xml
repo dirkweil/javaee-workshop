@@ -35,7 +35,7 @@
 
   <properties>
     <checkstyle.config>GEDOPLAN_SEMINAR</checkstyle.config>
-    
+
     <commonslogging.version>1.1.1</commonslogging.version>
     <deltaspike.version>0.5</deltaspike.version>
     <junit.version>4.11</junit.version>
@@ -81,6 +81,12 @@
         <artifactId>deltaspike-core-impl</artifactId>
         <version>${deltaspike.version}</version>
         <scope>runtime</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.apache.deltaspike.cdictrl</groupId>
+        <artifactId>deltaspike-cdictrl-api</artifactId>
+        <version>${deltaspike.version}</version>
       </dependency>
 
       <dependency>

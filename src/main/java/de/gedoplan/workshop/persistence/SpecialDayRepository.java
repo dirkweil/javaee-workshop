@@ -20,11 +20,21 @@ public class SpecialDayRepository implements Serializable
 
   public void persist(SpecialDay specialDay)
   {
+    /*
+     * FIXED: Bei Nutzung eines Application Managed Entity Managers muss die Verbindung zur Transaktion explizit gemacht werden.
+     * Ohne dies speicher der EM nichts ab!
+     */
+    this.entityManager.joinTransaction();
     this.entityManager.persist(specialDay);
   }
 
   public void merge(SpecialDay specialDay)
   {
+    /*
+     * FIXED: Bei Nutzung eines Application Managed Entity Managers muss die Verbindung zur Transaktion explizit gemacht werden.
+     * Ohne dies speicher der EM nichts ab!
+     */
+    this.entityManager.joinTransaction();
     this.entityManager.merge(specialDay);
   }
 
