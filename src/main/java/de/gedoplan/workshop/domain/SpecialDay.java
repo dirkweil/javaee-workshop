@@ -4,10 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
+// @Table(name="SPECIAL_DAY")
 public class SpecialDay
 {
   @Id
   private String id;
+
+  // @Column(name = "NAME", columnDefinition = "VARCHAR(30)")
   private String name;
 
   public SpecialDay(String id, String name)
