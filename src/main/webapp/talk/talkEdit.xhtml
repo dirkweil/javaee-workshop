@@ -9,20 +9,20 @@
   <h:form>
     <h:panelGrid columns="2">
       <h:outputLabel value="Id: " for="id"/>
-      <h:outputText value="#{talkPresenter.currentTalk.id}" id="id"/>
+      <h:outputText value="#{talkEditPresenter.currentTalk.id}" id="id"/>
 
       <h:outputLabel value="Title: " for="title"/>
-      <h:inputText value="#{talkPresenter.currentTalk.title}" id="title" />
+      <h:inputText value="#{talkEditPresenter.currentTalk.title}" id="title" />
       
       <h:outputLabel value="Speaker: " for="speaker"/>
-      <h:inputText value="#{talkPresenter.currentTalk.speakersAsCommaSeparatedList}" id="speaker" />
+      <h:inputText value="#{talkEditPresenter.currentTalk.speakersAsCommaSeparatedList}" id="speaker" />
       
       <h:outputLabel value="Talk Type: " for="talkType"/>
-      <h:selectOneMenu value="#{talkPresenter.currentTalk.talkType}" id="talkType">
-        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+      <h:selectOneMenu value="#{talkEditPresenter.currentTalk.talkType}" id="talkType">
+        <f:selectItems value="#{talkEditPresenter.talkTypes}"/>
       </h:selectOneMenu>
       
-      <h:commandButton action="#{talkPresenter.save()}" value="OK" />
+      <h:commandButton action="#{talkEditPresenter.save()}" value="OK" />
       <h:commandButton action="exit" value="Cancel" />
     </h:panelGrid>
   </h:form>

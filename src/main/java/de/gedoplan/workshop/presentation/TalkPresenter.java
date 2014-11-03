@@ -1,12 +1,12 @@
 package de.gedoplan.workshop.presentation;
 
 import de.gedoplan.workshop.domain.Talk;
-import de.gedoplan.workshop.domain.TalkType;
 import de.gedoplan.workshop.persistence.All;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
 import java.util.List;
 
+import javax.enterprise.inject.Produces;
 import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -18,6 +18,9 @@ public class TalkPresenter
   @Inject
   @All
   List<Talk>     talks;
+
+  @Produces
+  @Current
   private Talk   currentTalk;
 
   @Inject
@@ -33,21 +36,4 @@ public class TalkPresenter
     this.currentTalk = talk;
     return "talkEdit.xhtml";
   }
-
-  public Talk getCurrentTalk()
-  {
-    return this.currentTalk;
-  }
-
-  public String save()
-  {
-    this.talkRepository.merge(this.currentTalk);
-    return "exit";
-  }
-
-  public TalkType[] getTalkTypes()
-  {
-    return TalkType.values();
-  }
-
 }
