@@ -4,15 +4,10 @@ import java.util.Properties;
 
 import javax.batch.operations.JobOperator;
 import javax.batch.runtime.BatchRuntime;
-import javax.ejb.Schedule;
-import javax.ejb.Stateless;
-import javax.ejb.Timer;
 
-@Stateless
 public class SpecialDayJobControl
 {
-  @Schedule(hour = "*", minute = "*", second = "0/10")
-  public void runImport(Timer timer)
+  public void runImport()
   {
     JobOperator jobOperator = BatchRuntime.getJobOperator();
     Properties jobProperties = new Properties();
