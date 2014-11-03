@@ -2,9 +2,14 @@ package de.gedoplan.workshop.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 // @Table(name="SPECIAL_DAY")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class SpecialDay extends SingleIdEntity<String>
 {
   @Id
@@ -19,7 +24,7 @@ public class SpecialDay extends SingleIdEntity<String>
     this.name = name;
   }
 
-  protected SpecialDay()
+  public SpecialDay()
   {
   }
 

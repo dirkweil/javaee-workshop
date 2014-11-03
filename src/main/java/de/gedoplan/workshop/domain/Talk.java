@@ -12,10 +12,14 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OrderColumn;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Talk extends GeneratedIntegerIdEntity
 {
+  @NotNull
+  @Size(min = 5, message = "muss min. 5 Zeichen haben")
   private String       title;
 
   @ElementCollection(fetch = FetchType.LAZY)
