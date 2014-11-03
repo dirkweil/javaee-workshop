@@ -27,12 +27,14 @@ public class SpecialDayPresenter implements Serializable
     return this.specialDays;
   }
 
-  public void save()
+  public String save()
   {
     for (SpecialDay specialDay : this.specialDays)
     {
       this.specialDayRepository.merge(specialDay);
     }
+
+    return "home";
   }
 
   public void add()
