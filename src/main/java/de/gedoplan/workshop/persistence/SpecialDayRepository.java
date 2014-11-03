@@ -4,6 +4,7 @@ import de.gedoplan.workshop.domain.SpecialDay;
 
 import java.util.List;
 
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -20,6 +21,8 @@ public class SpecialDayRepository
     this.entityManager.persist(specialDay);
   }
 
+  @Produces
+  @All
   public List<SpecialDay> findAll()
   {
     TypedQuery<SpecialDay> query = this.entityManager.createQuery("select x from SpecialDay x", SpecialDay.class);
