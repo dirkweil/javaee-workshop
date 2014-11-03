@@ -8,6 +8,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OrderColumn;
 import javax.persistence.Temporal;
@@ -18,7 +19,7 @@ public class Talk extends GeneratedIntegerIdEntity
 {
   private String       title;
 
-  @ElementCollection
+  @ElementCollection(fetch = FetchType.EAGER)
   @OrderColumn
   private List<String> speakers;
 

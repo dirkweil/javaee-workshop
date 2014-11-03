@@ -14,6 +14,9 @@
       <h:outputLabel value="Title: " for="title"/>
       <h:inputText value="#{talkPresenter.currentTalk.title}" id="title" />
       
+      <h:outputLabel value="Speaker " for="speaker"/>
+      <h:inputText value="#{talkPresenter.currentTalk.speakersAsCommaSeparatedList}" id="speaker" />
+      
       <h:commandButton action="#{talkPresenter.save()}" value="OK" />
       <h:commandButton action="exit" value="Cancel" />
     </h:panelGrid>
