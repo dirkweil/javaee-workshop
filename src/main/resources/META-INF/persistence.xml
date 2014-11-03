@@ -39,7 +39,7 @@
     </properties>
   </persistence-unit>
   
-  <persistence-unit name="temp">
+  <persistence-unit name="test">
     <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
     <!-- 
     <class>fully.qualified.Class</class>
