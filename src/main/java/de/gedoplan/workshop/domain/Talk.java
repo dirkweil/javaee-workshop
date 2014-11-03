@@ -17,7 +17,7 @@ public class Talk extends GeneratedIntegerIdEntity
 {
   private String       title;
 
-  @ElementCollection(fetch = FetchType.LAZY)
+  @ElementCollection(fetch = FetchType.EAGER)
   @OrderColumn
   private List<String> speakers;
 
