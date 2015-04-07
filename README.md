@@ -1,7 +1,7 @@
 Java EE 7 - Workshop
 ========================
 
-Dies ist das Begleitprojekt zum Workshop Java EE 7.
+Dies ist das Begleitprojekt zum Workshop Java EE 7 am 20.04.2014 im Rahmen der JAX.
 
 Zum Mitmachen benötigen Sie die folgenden Dinge:
 
@@ -28,14 +28,15 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 - WildFly 8 (Download http://www.wildfly.org/download/, derzeitige Version 8.2.0.Final). Wir setzen im Workshop diesen Server ein. Generell ist aber jeder 
   Java-EE-7-Server geeignet.
   
+- Recht praktisch zum Verfolgen der Änderungen in der Datenbank ist ein DB-Tool. Grundsätzlich sind viele Tools gut geeignet. Ich setze gerne
+  SQL Workbench/J ein (http://www.sql-workbench.net). Im Workshop werden wir die H2-Datenbank nutzen, die auch mit einer eigenen, allerdings
+  teilweise etwas sperrigen GUI ausgestattet ist.
+  
 
-Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-- W-JAX 2013: Branch wjax13
-- JAX 2014:   Branch jax14
-- W-JAX 2014: Branch wjax14
-- JAX 2015:   Branch jax15
+Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Initial ist der Branch jax15 identisch, wird aber im Workshop
+mit der konkret entwickelten Software stückweise gefüllt.
 
-Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
+Bitte checken Sie zur Vorbereitung den Branch jax15 aus, wenn Sie direkt mitmachen wollen.
   
 Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und vorher oder nachher gerne an dirk.weil(at)gedoplan.de.
 
