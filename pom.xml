@@ -15,13 +15,6 @@
   <packaging>war</packaging>
 
   <properties>
-    <!-- Benötigte Versionen für Java, Maven etc. -->
-    <required.java.version>[1.8,)</required.java.version>
-
-    <!-- Java-Quellen und Resourcen: Version, Encoding -->
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    
     <checkstyle.config>GEDOPLAN_SEMINAR</checkstyle.config>
 
     <commonslogging.version>1.1.1</commonslogging.version>
