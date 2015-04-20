@@ -5,12 +5,13 @@ import de.gedoplan.workshop.domain.SpecialDay;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 public class SpecialDayRepository implements Serializable
 {
-  @PersistenceContext(unitName = "default")
+  // @PersistenceContext(unitName = "default")
+  @Inject
   EntityManager entityManager;
 
   public void persist(SpecialDay specialDay)
