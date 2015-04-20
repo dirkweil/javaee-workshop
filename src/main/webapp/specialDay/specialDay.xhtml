@@ -1,23 +1,23 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" 
-xmlns:ui="http://java.sun.com/jsf/facelets" 
-xmlns:f="http://java.sun.com/jsf/core" 
-xmlns:h="http://java.sun.com/jsf/html"
-xmlns:p="http://primefaces.org/ui">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui">
 
 <h:head></h:head>
 <body>
   <h2>Special Days</h2>
 
-  <p:dataTable value="#{specialDayPresenter.specialDays}" var="s">
-    <p:column>
-      <f:facet name="header">Id</f:facet>
-      <h:outputText value="#{s.id}" />
-    </p:column>
-    <p:column>
-      <f:facet name="header">Name</f:facet>
-      <h:outputText value="#{s.name}" />
-    </p:column>
-  </p:dataTable>
+  <h:form>
+    <p:dataTable value="#{specialDayPresenter.specialDays}" var="s">
+      <p:column>
+        <f:facet name="header">Id</f:facet>
+        <h:inputText value="#{s.id}" />
+      </p:column>
+      <p:column>
+        <f:facet name="header">Name</f:facet>
+        <h:inputText value="#{s.name}" />
+      </p:column>
+    </p:dataTable>
+    
+    <h:commandButton action="#{specialDayPresenter.save()}" value="OK" />
+  </h:form>
 </body>
 </html>

@@ -5,10 +5,10 @@ import de.gedoplan.workshop.persistence.SpecialDayRepository;
 
 import java.util.List;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 @Named
 @RequestScoped
@@ -17,6 +17,7 @@ public class SpecialDayPresenter
   @Inject
   SpecialDayRepository specialDayRepository;
 
+  @Inject
   List<SpecialDay>     specialDays;
 
   public List<SpecialDay> getSpecialDays()
@@ -24,9 +25,20 @@ public class SpecialDayPresenter
     return this.specialDays;
   }
 
-  @PostConstruct
-  private void postConstruct()
+  // @PostConstruct
+  // private void postConstruct()
+  // {
+  // this.specialDays = this.specialDayRepository.findAll();
+  // }
+
+  @Transactional
+  public String save()
   {
-    this.specialDays = this.specialDayRepository.findAll();
+    for (SpecialDay specialDay : this.specialDays)
+    {
+      this.specialDayRepository.merge(specialDay);
+    }
+
+    return null;
   }
 }

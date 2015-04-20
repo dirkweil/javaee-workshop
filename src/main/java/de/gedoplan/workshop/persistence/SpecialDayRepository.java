@@ -5,13 +5,20 @@ import de.gedoplan.workshop.domain.SpecialDay;
 import java.io.Serializable;
 import java.util.List;
 
+import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
 
+@ApplicationScoped
+@Transactional
 public class SpecialDayRepository implements Serializable
 {
   // @PersistenceContext(unitName = "default")
   @Inject
+  @Default
   EntityManager entityManager;
 
   public void persist(SpecialDay specialDay)
@@ -34,6 +41,7 @@ public class SpecialDayRepository implements Serializable
     return this.entityManager.find(SpecialDay.class, id);
   }
 
+  @Produces
   public List<SpecialDay> findAll()
   {
     return this.entityManager.createQuery("select s from SpecialDay s", SpecialDay.class).getResultList();
