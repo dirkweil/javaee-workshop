@@ -22,7 +22,7 @@ public class TalkPresenter
   @PostConstruct
   void postConstruct()
   {
-    this.talks = this.talkRepository.findAll();
+    this.talks = this.talkRepository.findAllWithSpeakers();
   }
 
   public List<Talk> getTalks()
