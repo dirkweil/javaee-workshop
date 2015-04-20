@@ -13,7 +13,9 @@ import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 @Entity
 @NamedEntityGraph(name = "Talk.speakers", attributeNodes = @NamedAttributeNode("speakers"))
 public class Talk extends GeneratedIntegerIdEntity
