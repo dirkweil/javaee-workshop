@@ -8,13 +8,13 @@ import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
-import javax.faces.flow.FlowScoped;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
 @Named
-@FlowScoped("specialDay")
+@ViewScoped
 public class SpecialDayPresenter implements Serializable
 {
   @Inject
@@ -42,7 +42,7 @@ public class SpecialDayPresenter implements Serializable
       this.specialDayRepository.merge(specialDay);
     }
 
-    return "exit";
+    return "home";
   }
 
   public void addSpecialDay()
