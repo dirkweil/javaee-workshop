@@ -30,6 +30,12 @@
         <f:convertDateTime pattern="HH:mm" />
       </h:inputText>
       <h:message for="duration"/>
+
+      <h:outputLabel for="specialDay" value="Special Day:" />
+      <h:selectOneRadio id="specialDay" value="#{talkEditPresenter.talk.specialDay}">
+        <f:selectItems value="#{talkEditPresenter.specialDays}" var="specialDay" itemLabel="#{specialDay.name}"  />
+      </h:selectOneRadio>
+      <h:message for="specialDay"/>
     </h:panelGrid>
 
     <h:commandButton value="ok" action="#{talkEditPresenter.save()}" />
