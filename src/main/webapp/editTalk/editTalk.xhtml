@@ -1,0 +1,38 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel value="Title: " for="title" />
+      <h:inputText value="#{talkEditPresenter.talk.title}" id="title" />
+
+      <h:outputLabel value="Speakers: " for="speakers" />
+      <h:inputText value="#{talkEditPresenter.talk.speakersAsCommaSeparatedList}" id="speakers" />
+      
+      
+      <h:outputLabel value="Type: " for="talkType" />
+      <h:selectOneMenu value="#{talkEditPresenter.talk.talkType}" id="talkType">
+        <f:selectItems value="#{talkEditPresenter.talkTypes}"/>
+      </h:selectOneMenu>
+
+      <h:outputLabel value="Start: " for="start" />
+      <h:inputText value="#{talkEditPresenter.talk.start}" id="start">
+        <f:convertDateTime type="both" dateStyle="medium" timeStyle="short"/>
+      </h:inputText>      
+      
+      <h:outputLabel value="Duration: " for="duration" />
+      <h:inputText value="#{talkEditPresenter.talk.duration}" id="duration">
+        <f:convertDateTime type="time" timeStyle="short"/>
+      </h:inputText>      
+      
+      <h:commandButton action="#{talkEditPresenter.save()}" value="ok" />
+
+    </h:panelGrid>
+  </h:form>
+
+</body>
+</html>

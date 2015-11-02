@@ -108,9 +108,12 @@ public class Talk extends GeneratedIntegerIdEntity
   public void setSpeakersAsCommaSeparatedList(String cs)
   {
     this.speakers.clear();
-    for (String speaker : cs.split("\\s*,\\s*"))
+    if (cs != null)
     {
-      this.speakers.add(speaker);
+      for (String speaker : cs.split("\\s*,\\s*"))
+      {
+        this.speakers.add(speaker);
+      }
     }
   }
 }
