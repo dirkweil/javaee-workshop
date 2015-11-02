@@ -38,6 +38,12 @@ public class TalkPresenter
     return "editTalk";
   }
 
+  public String editTalk(Talk talk)
+  {
+    this.currentTalk = talk;
+    return "editTalk";
+  }
+
   @Produces
   @Current
   public Talk getCurrentTalk()
