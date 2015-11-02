@@ -2,6 +2,7 @@ package de.gedoplan.workshop.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Version;
 
 @Entity
 public class SpecialDay
@@ -9,6 +10,9 @@ public class SpecialDay
   @Id
   private String id;
   private String name;
+
+  @Version
+  private long   version;
 
   public SpecialDay(String id, String name)
   {
