@@ -5,6 +5,7 @@ import de.gedoplan.workshop.domain.SpecialDay;
 import java.util.List;
 
 import javax.enterprise.inject.Default;
+import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 
@@ -24,6 +25,7 @@ public class SpecialDayRepository
     return this.entityManager.find(SpecialDay.class, id);
   }
 
+  @Produces
   public List<SpecialDay> findAll()
   {
     return this.entityManager
