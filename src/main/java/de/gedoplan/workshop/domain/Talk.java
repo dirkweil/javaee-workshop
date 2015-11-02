@@ -14,9 +14,14 @@ import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @NamedEntityGraph(name = "TalksWithSpeakers", attributeNodes = @NamedAttributeNode("speakers"))
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Talk extends GeneratedIntegerIdEntity
 {
   private String       title;
