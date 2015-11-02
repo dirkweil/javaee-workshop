@@ -9,15 +9,18 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.NamedAttributeNode;
+import javax.persistence.NamedEntityGraph;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
+@NamedEntityGraph(name = "TalksWithSpeakers", attributeNodes = @NamedAttributeNode("speakers"))
 public class Talk extends GeneratedIntegerIdEntity
 {
   private String       title;
 
-  @ElementCollection(fetch = FetchType.EAGER)
+  @ElementCollection(fetch = FetchType.LAZY)
   private List<String> speakers;
 
   @Enumerated(EnumType.STRING)

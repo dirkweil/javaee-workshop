@@ -21,8 +21,8 @@ public class TalkPresenter
   @PostConstruct
   void postConstruct()
   {
-    // this.talks = this.talkRepository.findAllWithSpeakers();
     this.talks = this.talkRepository.findAll();
+    // this.talks = this.talkRepository.findTalksWithSpeakers();
   }
 
   public List<Talk> getTalks()
