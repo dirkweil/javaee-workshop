@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.Temporal;
@@ -120,4 +121,18 @@ public class Talk extends GeneratedIntegerIdEntity
       }
     }
   }
+
+  @ManyToOne
+  private SpecialDay specialDay;
+
+  public SpecialDay getSpecialDay()
+  {
+    return this.specialDay;
+  }
+
+  public void setSpecialDay(SpecialDay specialDay)
+  {
+    this.specialDay = specialDay;
+  }
+
 }

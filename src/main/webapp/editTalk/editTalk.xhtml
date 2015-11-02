@@ -28,6 +28,12 @@
       <h:inputText value="#{talkEditPresenter.talk.duration}" id="duration">
         <f:convertDateTime type="time" timeStyle="short"/>
       </h:inputText>      
+
+      <h:outputLabel value="Special Day: " for="specialDay" />
+      <h:selectOneRadio value="#{talkEditPresenter.talk.specialDay}" id="specialDay">
+        <f:selectItems value="#{talkEditPresenter.specialDays}" var="x" itemLabel="#{x.name}" itemValue="#{x}"/>
+<!--         <f:converter converterId="SpecialDayConverter" /> -->
+      </h:selectOneRadio>
       
       <h:commandButton action="#{talkEditPresenter.save()}" value="ok" />
 
