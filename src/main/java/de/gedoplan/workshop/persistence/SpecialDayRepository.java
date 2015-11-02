@@ -8,6 +8,8 @@ import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
+import javax.transaction.Transactional;
+import javax.transaction.Transactional.TxType;
 
 public class SpecialDayRepository
 {
@@ -31,6 +33,12 @@ public class SpecialDayRepository
     return this.entityManager
         .createQuery("select s from SpecialDay as s", SpecialDay.class)
         .getResultList();
+  }
+
+  @Transactional(value = TxType.MANDATORY)
+  public void merge(SpecialDay specialDay)
+  {
+    this.entityManager.merge(specialDay);
   }
 
 }

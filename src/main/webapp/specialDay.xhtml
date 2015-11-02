@@ -10,6 +10,7 @@ xmlns:p="http://primefaces.org/ui">
 
   <h2>Special Days</h2>
 
+<h:form>
   <p:dataTable var="specialDay" value="#{specialDayPresenter.specialDays}">
     <p:column>
       <f:facet name="header">Id</f:facet>
@@ -17,8 +18,11 @@ xmlns:p="http://primefaces.org/ui">
     </p:column>
     <p:column>
       <f:facet name="header">Name</f:facet>
-      <h:outputText value="#{specialDay.name}" />
+      <h:inputText value="#{specialDay.name}" />
     </p:column>
   </p:dataTable>
+  
+  <h:commandButton action="#{specialDayPresenter.saveAll()}" value="ok" />
+</h:form>
 </body>
 </html>
