@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+  version="2.1">
+<!-- 
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+  version="2.0">
+ -->
+  <persistence-unit name="default">
+    <jta-data-source>datasource/conference</jta-data-source>
+    <properties>
+      <!-- Schemagenerierung -->
+<!-- 
+      <property name="javax.persistence.schema-generation.database.action" value="create" />
+      <property name="javax.persistence.schema-generation.drop-script-source" value="META-INF/drop.sql" />
+      <property name="javax.persistence.schema-generation.drop-source" value="script-then-metadata" />
+      <property name="javax.persistence.schema-generation.create-script-source" value="META-INF/create.sql" />
+      <property name="javax.persistence.schema-generation.create-source" value="metadata-then-script" />
+      <property name="javax.persistence.sql-load-script-source" value="META-INF/sqlLoad.sql" />
+ -->
+      <property name="eclipselink.ddl-generation" value="create-or-extend-tables" />
+      <property name="eclipselink.ddl-generation.output-mode" value="database" />
+      <property name="hibernate.hbm2ddl.auto" value="update" />
+      <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)" />
+
+      <!-- Logging level -->
+      <!-- EclipseLink: FINE logs SQL commands -->
+      <property name="eclipselink.logging.level" value="OFF" />
+      <property name="eclipselink.logging.connection" value="false" />
+      <property name="eclipselink.logging.parameters" value="true" />
+      <property name="eclipselink.logging.session" value="false" />
+      <property name="eclipselink.logging.thread" value="false" />
+      <property name="eclipselink.logging.timestamp" value="true" />
+      <!-- Hibernate: For SQL logging set the log categories org.hibernate.SQL und org.hibernate.type.descriptor.sql.BasicBinder to TRACE -->
+      <property name="openjpa.Log" value="log4j" />
+      <property name="openjpa.ConnectionFactoryProperties" value="PrintParameters=true, PrettyPrint=true, PrettyPrintLineLength=72" />
+
+      <!-- Hibernate: Use new id generator -->
+      <property name="hibernate.id.new_generator_mappings" value="true" />
+    </properties>
+  </persistence-unit>
+  
+  <persistence-unit name="temp">
+    <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+    <!-- 
+    <class>fully.qualified.Class</class>
+     -->
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+  </persistence-unit>
+</persistence>
