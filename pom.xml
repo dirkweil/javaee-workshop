@@ -16,14 +16,14 @@
   <repositories>
     <repository>
       <id>gedoplanPublic</id>
-      <url>https://service.gedoplan.de/nexus/content/groups/public</url>
+      <url>http://svn.involva-gruppe.de/nexus/content/groups/public</url>
     </repository>
   </repositories>
 
   <pluginRepositories>
     <pluginRepository>
       <id>gedoplanPublic</id>
-      <url>https://service.gedoplan.de/nexus/content/groups/public</url>
+      <url>http://svn.involva-gruppe.de/nexus/content/groups/public</url>
     </pluginRepository>
   </pluginRepositories>
 
@@ -91,6 +91,7 @@
 
   <build>
     <defaultGoal>install</defaultGoal>
+    <finalName>${project.artifactId}</finalName>
   </build>
 
   <dependencies>

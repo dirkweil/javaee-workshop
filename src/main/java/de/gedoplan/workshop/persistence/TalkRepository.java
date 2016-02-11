@@ -15,9 +15,24 @@ public class TalkRepository implements Serializable
   @PersistenceContext(unitName = "default")
   EntityManager entityManager;
 
+  public void persist(Talk talk)
+  {
+    this.entityManager.persist(talk);
+  }
+
   public void merge(Talk talk)
   {
     this.entityManager.merge(talk);
+  }
+
+  public void remove(Talk talk)
+  {
+    this.entityManager.remove(talk);
+  }
+
+  public Talk findById(Integer id)
+  {
+    return this.entityManager.find(Talk.class, id);
   }
 
   public List<Talk> findAll()
