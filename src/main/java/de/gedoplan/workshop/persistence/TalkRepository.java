@@ -2,22 +2,27 @@ package de.gedoplan.workshop.persistence;
 
 import de.gedoplan.workshop.domain.Talk;
 
+import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.EntityGraph;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Transactional
-public class TalkRepository extends SingleIdEntityRepository<Integer, Talk>
+public class TalkRepository implements Serializable
 {
-  public List<Talk> findTalksWithSpeakers()
-  {
-    EntityGraph<?> entityGraph = this.entityManager.getEntityGraph("TalksWithSpeakers");
+  @PersistenceContext(unitName = "default")
+  EntityManager entityManager;
 
-    return this.entityManager
-        .createQuery("select distinct x from Talk x", Talk.class)
-        .setHint("javax.persistence.loadgraph", entityGraph)
-        .getResultList();
+  public void merge(Talk talk)
+  {
+    this.entityManager.merge(talk);
+  }
+
+  public List<Talk> findAll()
+  {
+    return this.entityManager.createQuery("select x from Talk x", Talk.class).getResultList();
   }
 
 }

@@ -14,13 +14,15 @@
       </p:column>
       <p:column>
         <f:facet name="header">Start</f:facet>
-        <h:outputText value="#{t.start}" />
+        <h:outputText value="#{t.start}">
+          <f:convertDateTime type="both" dateStyle="medium" timeStyle="short" />
+        </h:outputText>
       </p:column>
       <p:column>
         <h:commandButton action="#{talkPresenter.editTalk(t)}" value="edit" />
       </p:column>
     </p:dataTable>
-    
+
     <h:commandButton action="#{talkPresenter.createTalk()}" value="+" />
   </h:form>
 

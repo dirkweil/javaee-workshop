@@ -1,5 +1,6 @@
 package de.gedoplan.workshop.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,24 +10,21 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
-import javax.persistence.ManyToOne;
-import javax.persistence.NamedAttributeNode;
-import javax.persistence.NamedEntityGraph;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
-@NamedEntityGraph(name = "TalksWithSpeakers", attributeNodes = @NamedAttributeNode("speakers"))
-@XmlRootElement
-@XmlAccessorType(XmlAccessType.FIELD)
-public class Talk extends GeneratedIntegerIdEntity
+public class Talk implements Serializable
 {
+  @Id
+  @GeneratedValue
+  private Integer      id;
+
   private String       title;
 
-  @ElementCollection(fetch = FetchType.LAZY)
+  @ElementCollection(fetch = FetchType.EAGER)
   private List<String> speakers;
 
   @Enumerated(EnumType.STRING)
@@ -35,10 +33,9 @@ public class Talk extends GeneratedIntegerIdEntity
   @Temporal(TemporalType.TIMESTAMP)
   private Date         start;
 
-  @Temporal(TemporalType.TIME)
-  private Date         duration;
+  private Integer      duration;
 
-  public Talk(String title, TalkType talkType, Date start, Date duration, String... speakers)
+  public Talk(String title, TalkType talkType, Date start, Integer duration, String... speakers)
   {
     this.title = title;
     this.talkType = talkType;
@@ -53,6 +50,11 @@ public class Talk extends GeneratedIntegerIdEntity
 
   protected Talk()
   {
+  }
+
+  public Integer getId()
+  {
+    return this.id;
   }
 
   public String getTitle()
@@ -90,12 +92,12 @@ public class Talk extends GeneratedIntegerIdEntity
     this.start = start;
   }
 
-  public Date getDuration()
+  public Integer getDuration()
   {
     return this.duration;
   }
 
-  public void setDuration(Date duration)
+  public void setDuration(Integer duration)
   {
     this.duration = duration;
   }
@@ -126,18 +128,4 @@ public class Talk extends GeneratedIntegerIdEntity
       }
     }
   }
-
-  @ManyToOne
-  private SpecialDay specialDay;
-
-  public SpecialDay getSpecialDay()
-  {
-    return this.specialDay;
-  }
-
-  public void setSpecialDay(SpecialDay specialDay)
-  {
-    this.specialDay = specialDay;
-  }
-
 }

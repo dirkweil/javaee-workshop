@@ -1,17 +1,20 @@
 package de.gedoplan.workshop.presentation;
 
 import de.gedoplan.workshop.domain.Talk;
+import de.gedoplan.workshop.domain.TalkType;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.inject.Model;
-import javax.enterprise.inject.Produces;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
+import javax.inject.Named;
 
-@Model
-public class TalkPresenter
+@Named
+@SessionScoped
+public class TalkPresenter implements Serializable
 {
   @Inject
   TalkRepository talkRepository;
@@ -22,7 +25,6 @@ public class TalkPresenter
   void postConstruct()
   {
     this.talks = this.talkRepository.findAll();
-    // this.talks = this.talkRepository.findTalksWithSpeakers();
   }
 
   public List<Talk> getTalks()
@@ -35,20 +37,30 @@ public class TalkPresenter
   public String createTalk()
   {
     this.currentTalk = new Talk(null, null, null, null);
-    return "editTalk";
+    return "talkEdit";
   }
 
   public String editTalk(Talk talk)
   {
     this.currentTalk = talk;
-    return "editTalk";
+    return "talkEdit";
   }
 
-  @Produces
-  @Current
   public Talk getCurrentTalk()
   {
     return this.currentTalk;
+  }
+
+  public TalkType[] getTalkTypes()
+  {
+    return TalkType.values();
+  }
+
+  public String save()
+  {
+    this.talkRepository.merge(this.currentTalk);
+
+    return "home";
   }
 
 }

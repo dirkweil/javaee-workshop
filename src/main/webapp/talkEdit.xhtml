@@ -1,0 +1,37 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel value="Title: " for="title" />
+      <h:inputText value="#{talkPresenter.currentTalk.title}" id="title" />
+
+      <h:outputLabel value="Speakers: " for="speakers" />
+      <h:inputText value="#{talkPresenter.currentTalk.speakersAsCommaSeparatedList}" id="speakers" />
+      
+      
+      <h:outputLabel value="Type: " for="talkType" />
+      <h:selectOneMenu value="#{talkPresenter.currentTalk.talkType}" id="talkType">
+        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+      </h:selectOneMenu>
+
+      <h:outputLabel value="Start: " for="start" />
+      <h:inputText value="#{talkPresenter.currentTalk.start}" id="start">
+        <f:convertDateTime type="both" dateStyle="medium" timeStyle="short"/>
+      </h:inputText>      
+      
+      <h:outputLabel value="Duration: " for="duration" />
+      <h:inputText value="#{talkPresenter.currentTalk.duration}" id="duration">
+      </h:inputText>      
+
+      <h:commandButton action="#{talkPresenter.save()}" value="ok" />
+
+    </h:panelGrid>
+  </h:form>
+
+</body>
+</html>
