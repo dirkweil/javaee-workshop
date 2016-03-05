@@ -7,7 +7,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 
 - Einen PC (;-). Das Betriebssystem ist generell zweitrangig. Ich habe allerdings nur Erfahrungen mit Windows und (ein wenig) mit Linux. Zu MacOS kann ich nichts sagen.
 
-- Ein installiertes JSDK. Wir benötigen Java 7 oder 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- Ein installiertes JSDK. Wir benötigen Java 7 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 - Einen Git-Client, z. B. Git Bash (Download: http://git-scm.com/downloads)
 
@@ -26,12 +26,12 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Maven-Projekte) nicht korrekt. Wenn nach dem Import der Projekte Validierungsfehler (z. B. "JPA Problem") angezeigt werden, sollten Sie die Validatoren deaktiviern 
   (Window -> Preferences -> Validation: Disable All).
 
-- WildFly 9 (Download http://wildfly.org/downloads/). Wir setzen im Workshop diesen Server ein. Generell ist aber jeder Java-EE-7-Server geeignet.
+- WildFly 10 (Download http://wildfly.org/downloads/). Wir setzen im Workshop diesen Server ein. Generell ist aber jeder Java-EE-7-Server geeignet.
   
 
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-- JAX 2015:   Branch jax15
 - WJAX 2015:  Branch wjax15
+- JAX 2016:   Branch jax16
 
 Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
   
