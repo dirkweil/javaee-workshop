@@ -1,7 +1,7 @@
 Java EE 7 - Workshop
 ========================
 
-Dies ist das Begleitprojekt zum Artikel "Java EE 7 - Anwendungsentwicklung ohne Ballast" in der Ausgabe 03/2016 der Informatik Aktuell.
+Dies ist das Begleitprojekt zum Artikel "Java EE 7 - Anwendungsentwicklung ohne Ballast" in der Ausgabe Frühjahr 2016 unserer Fimenzeitschrift GEDOPLAN aktuell.
 
 Zum Ausprobieen benötigen Sie die folgenden Dinge:
 
