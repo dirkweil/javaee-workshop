@@ -3,17 +3,18 @@ package de.gedoplan.workshop.presentation;
 import de.gedoplan.workshop.domain.SpecialDay;
 import de.gedoplan.workshop.persistence.SpecialDayRepository;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
 @Named
-@RequestScoped
-public class SpecialDayPresenter
+@SessionScoped
+public class SpecialDayPresenter implements Serializable
 {
   @Inject
   SpecialDayRepository     specialDayRepository;
@@ -38,6 +39,11 @@ public class SpecialDayPresenter
     {
       this.specialDayRepository.merge(specialDay);
     }
+  }
+
+  public void add()
+  {
+    this.specialDays.add(new SpecialDay(null, null));
   }
 
 }

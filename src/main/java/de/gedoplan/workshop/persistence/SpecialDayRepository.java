@@ -2,6 +2,7 @@ package de.gedoplan.workshop.persistence;
 
 import de.gedoplan.workshop.domain.SpecialDay;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -10,7 +11,7 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 
 @Transactional
-public class SpecialDayRepository
+public class SpecialDayRepository implements Serializable
 {
   // @PersistenceContext(unitName = "default")
   @Inject
