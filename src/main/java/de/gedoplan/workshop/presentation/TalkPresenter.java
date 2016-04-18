@@ -1,6 +1,7 @@
 package de.gedoplan.workshop.presentation;
 
 import de.gedoplan.workshop.domain.Talk;
+import de.gedoplan.workshop.domain.TalkType;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
 import java.io.Serializable;
@@ -54,6 +55,11 @@ public class TalkPresenter implements Serializable
   {
     this.talkRepository.merge(this.talk);
     return "exit";
+  }
+
+  public TalkType[] getTalkTypes()
+  {
+    return TalkType.values();
   }
 
 }

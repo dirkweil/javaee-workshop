@@ -21,10 +21,15 @@
       </h:inputText>
 
       <h:outputLabel value="TalkType: " for="talkType" />
-      <h:inputText id="talkType" value="#{talkPresenter.talk.talkType}" />
+      <h:selectOneRadio id="talkType" value="#{talkPresenter.talk.talkType}" >
+        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+      </h:selectOneRadio>
 
       <h:outputLabel value="Speakers: " for="speakers" />
       <h:inputText id="speakers" value="#{talkPresenter.talk.speakersAsCommaSeparatedList}" />
+      
+      <h:outputLabel value="SpecialDay: " for="specialDay" />
+      <h:inputText id="specialDay" value="#{talkPresenter.talk.specialDay}" />
       
       <h:commandButton action="#{talkPresenter.save()}" value="OK" />
       <h:commandButton action="exit" value="cancel" />
