@@ -7,6 +7,8 @@
    <PROCESS-ITEM-OUTPUT ID="exitSpecialDay::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml"
     TITLE="exitSpecialDay" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="exitTalk::#index.xhtml" NAME="output1"
+    PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="exitTalk" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#index.xhtml" PATH="/index.xhtml"
