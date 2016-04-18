@@ -24,8 +24,8 @@ public class TalkPresenter implements Serializable
   @PostConstruct
   void postConstruct()
   {
-    // this.talks = this.talkRepository.findAllWithSpeakers();
-    this.talks = this.talkRepository.findAll();
+    this.talks = this.talkRepository.findAllWithSpeakers();
+    // this.talks = this.talkRepository.findAll();
   }
 
   public List<Talk> getTalks()
