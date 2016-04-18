@@ -9,6 +9,7 @@ import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 @Named
 @RequestScoped
@@ -28,6 +29,15 @@ public class SpecialDayPresenter
   void init()
   {
     this.specialDays = this.specialDayRepository.findAll();
+  }
+
+  @Transactional
+  public void save()
+  {
+    for (SpecialDay specialDay : this.specialDays)
+    {
+      this.specialDayRepository.merge(specialDay);
+    }
   }
 
 }

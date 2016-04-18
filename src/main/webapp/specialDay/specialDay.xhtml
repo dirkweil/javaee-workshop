@@ -1,23 +1,24 @@
-<!DOCTYPE html> 
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:h="http://java.sun.com/jsf/html"> 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
 
-<h:head></h:head> 
-<body> 
+<h:head></h:head>
+<body>
   <h2>SpecialDays</h2>
-  
-  <h:dataTable value="#{specialDayPresenter.specialDays}" var="sd" rules="all">
-    <h:column>
-      <f:facet name="header">ID</f:facet>
-      <h:outputText value="#{sd.id}" />
-    </h:column>
-    <h:column>
-      <f:facet name="header">Name</f:facet>
-      <h:outputText value="#{sd.name}" />
-    </h:column>
-  </h:dataTable>
 
-</body> 
+  <h:form>
+    <h:dataTable value="#{specialDayPresenter.specialDays}" var="sd" rules="all">
+      <h:column>
+        <f:facet name="header">ID</f:facet>
+        <h:inputText value="#{sd.id}" />
+      </h:column>
+      <h:column>
+        <f:facet name="header">Name</f:facet>
+        <h:inputText value="#{sd.name}" />
+      </h:column>
+    </h:dataTable>
+    
+    <h:commandButton action="#{specialDayPresenter.save()}" value="OK" />
+  </h:form>
+
+</body>
 </html>
