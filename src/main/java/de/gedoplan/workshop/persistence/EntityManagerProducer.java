@@ -17,12 +17,7 @@ public class EntityManagerProducer
   }
 
   @PersistenceContext(unitName = "temp")
-  EntityManager tempEntityManager;
-
   @Produces
   @TempDb
-  public EntityManager getTempEntityManager()
-  {
-    return this.tempEntityManager;
-  }
+  EntityManager tempEntityManager;
 }
