@@ -20,6 +20,7 @@ public class SpecialDayPresenter implements Serializable
   @Inject
   SpecialDayRepository     specialDayRepository;
 
+  @Inject
   private List<SpecialDay> specialDays;
 
   public List<SpecialDay> getSpecialDays()
@@ -31,7 +32,7 @@ public class SpecialDayPresenter implements Serializable
   void init()
   {
     System.out.println("init");
-    this.specialDays = this.specialDayRepository.findAll();
+    // this.specialDays = this.specialDayRepository.findAll();
   }
 
   @PreDestroy
