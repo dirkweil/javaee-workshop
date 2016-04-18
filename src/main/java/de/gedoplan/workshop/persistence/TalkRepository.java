@@ -4,10 +4,10 @@ import de.gedoplan.workshop.domain.Talk;
 
 import java.util.List;
 
-import javax.enterprise.context.Dependent;
+import javax.enterprise.context.ApplicationScoped;
 import javax.transaction.Transactional;
 
-@Dependent
+@ApplicationScoped
 @Transactional
 public class TalkRepository extends SingleIdEntityRepository<Integer, Talk>
 {

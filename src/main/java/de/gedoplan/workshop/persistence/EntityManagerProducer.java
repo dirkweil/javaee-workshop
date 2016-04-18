@@ -12,18 +12,23 @@ import javax.persistence.PersistenceContextType;
 public class EntityManagerProducer
 {
   @PersistenceContext(unitName = "default", type = PersistenceContextType.EXTENDED)
-  private EntityManager entityManager;
+  EntityManager entityManager;
 
   @Produces
   @RequestScoped
-  // @Default
   public EntityManager getEntityManager()
   {
     return this.entityManager;
   }
 
-  // @PersistenceContext(unitName = "temp")
-  // @Produces
-  // @TempDb
-  // EntityManager tempEntityManager;
+  @PersistenceContext(unitName = "temp")
+  EntityManager tempEntityManager;
+
+  @Produces
+  @TempDb
+  @RequestScoped
+  public EntityManager getTempEntityManager()
+  {
+    return this.tempEntityManager;
+  }
 }
