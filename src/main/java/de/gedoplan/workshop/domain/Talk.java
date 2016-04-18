@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedAttributeNode;
@@ -29,9 +28,9 @@ public class Talk extends GeneratedIntegerIdEntity
   @Size(min = 1)
   private List<String> speakers;
 
-  @Enumerated(EnumType.STRING)
+  // @Enumerated(EnumType.STRING)
   // @Convert(converter = TalkTypeAttributeConverter.class)
-  // @Column(columnDefinition = "char(1)")
+  @Column(columnDefinition = "char(1)")
   private TalkType     talkType;
 
   @Temporal(TemporalType.TIMESTAMP)
