@@ -1,0 +1,31 @@
+package de.gedoplan.workshop.persistence;
+
+import de.gedoplan.workshop.domain.SpecialDay;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+
+public class SpecialDayRepository
+{
+  @PersistenceContext(unitName = "default")
+  EntityManager entityManager;
+
+  public void persist(SpecialDay specialDay)
+  {
+    this.entityManager.persist(specialDay);
+  }
+
+  public SpecialDay findById(String id)
+  {
+    return this.entityManager.find(SpecialDay.class, id);
+  }
+
+  public List<SpecialDay> findAll()
+  {
+    TypedQuery<SpecialDay> query = this.entityManager.createQuery("select sd from SpecialDay as sd", SpecialDay.class);
+    return query.getResultList();
+  }
+}
