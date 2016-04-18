@@ -1,12 +1,10 @@
 package de.gedoplan.workshop.domain;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class SpecialDay implements Serializable
+public class SpecialDay extends SingleIdEntity<String>
 {
   @Id
   private String id;
@@ -18,6 +16,7 @@ public class SpecialDay implements Serializable
     this.name = name;
   }
 
+  @Override
   public String getId()
   {
     return this.id;
@@ -36,12 +35,6 @@ public class SpecialDay implements Serializable
   public void setName(String name)
   {
     this.name = name;
-  }
-
-  @Override
-  public String toString()
-  {
-    return "SpecialDay [id=" + this.id + ", name=" + this.name + "]";
   }
 
   protected SpecialDay()
