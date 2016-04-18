@@ -6,33 +6,39 @@
   <h2>Talk:</h2>
 
   <h:form>
-    <h:panelGrid columns="2">
+    <h:panelGrid columns="3">
       <h:outputLabel value="Title: " for="title" />
       <h:inputText id="title" value="#{talkPresenter.talk.title}" />
+      <h:message for="title" />
 
       <h:outputLabel value="Start: " for="start" />
       <h:inputText id="start" value="#{talkPresenter.talk.start}">
         <f:convertDateTime pattern="yyyy-MM-dd HH:mm" />
       </h:inputText>
+      <h:message for="start" />
 
       <h:outputLabel value="Duration: " for="duration" />
       <h:inputText id="duration" value="#{talkPresenter.talk.duration}">
         <f:convertDateTime pattern="HH:mm" />
       </h:inputText>
+      <h:message for="duration" />
 
       <h:outputLabel value="TalkType: " for="talkType" />
-      <h:selectOneRadio id="talkType" value="#{talkPresenter.talk.talkType}" >
-        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+      <h:selectOneRadio id="talkType" value="#{talkPresenter.talk.talkType}">
+        <f:selectItems value="#{talkPresenter.talkTypes}" />
       </h:selectOneRadio>
+      <h:message for="talkType" />
 
       <h:outputLabel value="Speakers: " for="speakers" />
       <h:inputText id="speakers" value="#{talkPresenter.talk.speakersAsCommaSeparatedList}" />
-      
+      <h:message for="speakers" />
+
       <h:outputLabel value="SpecialDay: " for="specialDay" />
-      <h:selectOneMenu id="specialDay" value="#{talkPresenter.talk.specialDay}" >
-        <f:selectItems value="#{talkPresenter.specialDays}" var="sd" itemLabel="#{sd.name}"/>
+      <h:selectOneMenu id="specialDay" value="#{talkPresenter.talk.specialDay}">
+        <f:selectItems value="#{talkPresenter.specialDays}" var="sd" itemLabel="#{sd.name}" />
       </h:selectOneMenu>
-      
+      <h:message for="specialDay" />
+
       <h:commandButton action="#{talkPresenter.save()}" value="OK" />
       <h:commandButton action="exit" value="cancel" />
 

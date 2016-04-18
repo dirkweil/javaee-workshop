@@ -14,14 +14,19 @@ import javax.persistence.NamedAttributeNode;
 import javax.persistence.NamedEntityGraph;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @NamedEntityGraph(name = "TalksWithSpeakers", attributeNodes = @NamedAttributeNode("speakers") )
 public class Talk extends GeneratedIntegerIdEntity
 {
+  @NotNull
+  @Size(min = 10)
   private String       title;
 
   @ElementCollection(fetch = FetchType.LAZY)
+  @Size(min = 1)
   private List<String> speakers;
 
   @Enumerated(EnumType.STRING)
