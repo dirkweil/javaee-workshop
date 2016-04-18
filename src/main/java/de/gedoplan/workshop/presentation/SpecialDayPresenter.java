@@ -7,13 +7,14 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.annotation.PreDestroy;
+import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
 @Named
-@SessionScoped
+@FlowScoped("specialDay")
 public class SpecialDayPresenter implements Serializable
 {
   @Inject
@@ -29,16 +30,25 @@ public class SpecialDayPresenter implements Serializable
   @PostConstruct
   void init()
   {
+    System.out.println("init");
     this.specialDays = this.specialDayRepository.findAll();
   }
 
+  @PreDestroy
+  void cleanup()
+  {
+    System.out.println("cleanup");
+  }
+
   @Transactional
-  public void save()
+  public String save()
   {
     for (SpecialDay specialDay : this.specialDays)
     {
       this.specialDayRepository.merge(specialDay);
     }
+
+    return "exit";
   }
 
   public void add()
