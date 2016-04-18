@@ -1,5 +1,6 @@
 package de.gedoplan.workshop.presentation;
 
+import de.gedoplan.workshop.domain.SpecialDay;
 import de.gedoplan.workshop.domain.Talk;
 import de.gedoplan.workshop.domain.TalkType;
 import de.gedoplan.workshop.persistence.TalkRepository;
@@ -60,6 +61,14 @@ public class TalkPresenter implements Serializable
   public TalkType[] getTalkTypes()
   {
     return TalkType.values();
+  }
+
+  @Inject
+  List<SpecialDay> specialDays;
+
+  public List<SpecialDay> getSpecialDays()
+  {
+    return this.specialDays;
   }
 
 }

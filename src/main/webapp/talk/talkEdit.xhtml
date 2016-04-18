@@ -29,7 +29,9 @@
       <h:inputText id="speakers" value="#{talkPresenter.talk.speakersAsCommaSeparatedList}" />
       
       <h:outputLabel value="SpecialDay: " for="specialDay" />
-      <h:inputText id="specialDay" value="#{talkPresenter.talk.specialDay}" />
+      <h:selectOneMenu id="specialDay" value="#{talkPresenter.talk.specialDay}" >
+        <f:selectItems value="#{talkPresenter.specialDays}" var="sd" itemLabel="#{sd.name}"/>
+      </h:selectOneMenu>
       
       <h:commandButton action="#{talkPresenter.save()}" value="OK" />
       <h:commandButton action="exit" value="cancel" />
