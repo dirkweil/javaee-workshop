@@ -26,6 +26,8 @@ public class Talk extends GeneratedIntegerIdEntity
 
   @ElementCollection(fetch = FetchType.LAZY)
   @Size(min = 1)
+  // @BatchFetch(size = 10)
+  // @BatchSize(size = 10)
   private List<String> speakers;
 
   // @Enumerated(EnumType.STRING)

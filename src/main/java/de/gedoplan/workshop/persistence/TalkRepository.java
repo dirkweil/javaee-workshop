@@ -26,4 +26,9 @@ public class TalkRepository extends SingleIdEntityRepository<Integer, Talk>
     return this.entityManager.createQuery("select distinct x from Talk x", Talk.class).setHint("javax.persistence.loadgraph", entityGraph).getResultList();
   }
 
+  public List<IdAndName> findAllReduced()
+  {
+    return this.entityManager.createQuery("select new de.gedoplan.workshop.persistence.IdAndName(t.id, t.title) from Talk t", IdAndName.class).getResultList();
+  }
+
 }

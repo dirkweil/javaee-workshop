@@ -36,6 +36,9 @@
 
       <!-- Hibernate: Use new id generator -->
       <property name="hibernate.id.new_generator_mappings" value="true" />
+      
+      <!-- Hibernate: Default Batch Fetch Size -->
+      <property name="hibernate.default_batch_fetch_size" value="10"/>
     </properties>
   </persistence-unit>
   

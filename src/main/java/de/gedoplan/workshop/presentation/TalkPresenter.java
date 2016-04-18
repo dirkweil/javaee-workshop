@@ -25,8 +25,8 @@ public class TalkPresenter implements Serializable
   @PostConstruct
   void postConstruct()
   {
-    this.talks = this.talkRepository.findAllWithSpeakers();
-    // this.talks = this.talkRepository.findAll();
+    // this.talks = this.talkRepository.findAllWithSpeakers();
+    this.talks = this.talkRepository.findAll();
   }
 
   public List<Talk> getTalks()
@@ -43,13 +43,19 @@ public class TalkPresenter implements Serializable
 
   public String editTalk(Talk talk)
   {
-    this.talk = talk;
+    /*
+     * Achtung: Wir arbeiten mit detached Objects: Die von der View hierhin übergebenen Objekte
+     * stammen aus einem früheren Request und sind somit nicht mehr mit dem Entity Manager
+     * verbunden. Um ein Nachladen von lazy Attributes zu ermöglichen, wird hier einmal neu gelesen.
+     */
+    this.talk = this.talkRepository.findById(talk.getId());
     return "talkEdit";
   }
 
   public String createTalk()
   {
-    return editTalk(new Talk(null, null, null, null));
+    this.talk = new Talk(null, null, null, null);
+    return "talkEdit";
   }
 
   public String save()
