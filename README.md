@@ -7,7 +7,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 
 - Einen PC (;-). Das Betriebssystem ist generell zweitrangig. Ich habe allerdings nur Erfahrungen mit Windows und (ein wenig) mit Linux. Zu MacOS kann ich nichts sagen.
 
-- Ein installiertes JSDK. Wir benötigen Java 7 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+- Ein installiertes JSDK. Wir benötigen Java 8 (Download für Windows und Linux: http://www.oracle.com/technetwork/java/javase/downloads/index.html)
 
 - Einen Git-Client, z. B. Git Bash (Download: http://git-scm.com/downloads)
 
@@ -18,7 +18,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   für den JBoss Application Server nutzbar. Lassen Sie sich durch den Text auf der Download-Seite nicht verwirren: Die Software ist kostenlos. Sie müssen sich lediglich 
   registrieren.
   
-  Das JBDS ist ein Eclipse (Luna bzw. Mars) mit hinzuinstallierten JBoss Tools. Sie können somit auch ihr ggf. bereits installiertes Eclipse aufrüsten. Ich habe in der
+  Das JBDS ist ein Eclipse mit hinzuinstallierten JBoss Tools. Sie können somit auch ihr ggf. bereits installiertes Eclipse aufrüsten. Ich habe in der
   Vergangenheit aber sporadisch das Problem gehabt, dass vermutlich aufgrund inkompatibler Versionen diverser Plugins die Integration nicht vollständig funktional war.
   So konnten bspw. keine Maven-Projekte importiert werden oder die SCM-Anbindung funktionierte nicht mehr etc. etc. Die sichere Wahl ist daher auf jeden Fall das JBDS.
   
@@ -32,6 +32,7 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
 - WJAX 2015:  Branch wjax15
 - JAX 2016:   Branch jax16
+- WJAX 2016:  Branch wjax16
 
 Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
   
