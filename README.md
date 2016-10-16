@@ -1,7 +1,7 @@
 Java EE 7 - Workshop
 ========================
 
-Dies ist das Begleitprojekt zum Workshop Java EE 7.
+Dies ist das Begleitprojekt zum Workshop "Java EE 7 - Enterprise-Anwendungen ohne Ballast" am 07.11.2016 im Rahmen der W-JAX 2016.
 
 Zum Mitmachen benötigen Sie die folgenden Dinge:
 
@@ -27,14 +27,14 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   (Window -> Preferences -> Validation: Disable All).
 
 - WildFly 10 (Download http://wildfly.org/downloads/). Wir setzen im Workshop diesen Server ein. Generell ist aber jeder Java-EE-7-Server geeignet.
-  
 
-Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
-- WJAX 2015:  Branch wjax15
-- JAX 2016:   Branch jax16
-- WJAX 2016:  Branch wjax16
+- Recht praktisch zum Verfolgen der Änderungen in der Datenbank ist ein DB-Tool. Grundsätzlich sind viele Tools gut geeignet. Ich setze gerne
+  SQL Workbench/J ein (http://www.sql-workbench.net). Im Workshop werden wir die H2-Datenbank nutzen, die auch mit einer eigenen GUI ausgestattet ist.  
 
-Bitte checken Sie zur Vorbereitung den passenden Branch aus, wenn Sie direkt mitmachen wollen.
+Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Initial ist der Branch wjax16 identisch, wird aber im Workshop
+mit der konkret entwickelten Software stückweise gefüllt.
+
+Bitte checken Sie zur Vorbereitung den Branch wjax16 aus, wenn Sie direkt mitmachen wollen.
   
 Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und vorher oder nachher gerne an dirk.weil(at)gedoplan.de.
 
