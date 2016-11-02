@@ -1,1 +1,0 @@
-Verzeichnis für Test-Sourcen

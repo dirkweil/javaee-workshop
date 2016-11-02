@@ -1,1 +1,0 @@
-Verzeichnis (u.a.) für Deskriptoren

@@ -1,1 +1,0 @@
-Package für Geschäftsobjekte / Entities

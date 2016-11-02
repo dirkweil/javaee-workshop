@@ -1,1 +1,0 @@
-Package für (Web-) Präsentation (JSF Beans etc.)
