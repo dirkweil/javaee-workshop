@@ -50,6 +50,7 @@ Sollte das nicht klappen, prüfen Sie bitte folgende Dinge:
 - Haben Sie Maven in der Version 3 oder höher im Pfad? Der Befehl mvn -version sollte ohne Fehler ablaufen.
 - Weist der Wert der Umgebungsvariablen JAVA_HOME auf das Installationsverzeichnis des JDK?
 - Weist der Wert der Umgebungsvariablen M2_HOME auf das Installationsverzeichnis von Maven?
+
 Kommen Sie bei hartnäckigen Problemen etwas früher zum Workshop, damit wir uns noch kümmern können.
   
 Fragen können während der Veranstaltung natürlich jederzeit gestellt werden und vorher oder nachher gerne an dirk.weil(at)gedoplan.de.
