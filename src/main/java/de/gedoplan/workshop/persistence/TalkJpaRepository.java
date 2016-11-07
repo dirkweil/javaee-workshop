@@ -5,13 +5,13 @@ import de.gedoplan.workshop.entity.Talk;
 import java.util.List;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
 @ApplicationScoped
 public class TalkJpaRepository implements TalkRepository {
 
-  @PersistenceContext(unitName = "default")
+  @Inject
   EntityManager entityManager;
 
   @Override

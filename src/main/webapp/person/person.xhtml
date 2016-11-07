@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:h="http://xmlns.jcp.org/jsf/html"
+  xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head>
+<h:body>
+
+  <H2>Persons</H2>
+
+  <p:dataTable value="#{personPresenter.persons}" var="person">
+    <p:column>
+      <f:facet name="header">Last name</f:facet>
+      <h:outputText value="#{person.lastName}" />
+    </p:column>
+    <p:column>
+      <f:facet name="header">First name</f:facet>
+      <h:outputText value="#{person.firstName}" />
+    </p:column>
+  </p:dataTable>
+
+</h:body>
+</html>
