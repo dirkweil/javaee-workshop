@@ -5,6 +5,7 @@ import de.gedoplan.workshop.persistence.TalkRepository;
 
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -16,8 +17,15 @@ public class TalkPresenter {
   @Inject
   TalkRepository talkRepository;
 
-  public List<Talk> getTalks() {
-    return this.talkRepository.findAll();
+  private List<Talk> talks;
 
+  public List<Talk> getTalks() {
+    return this.talks;
+  }
+
+  @PostConstruct
+  void init() {
+    System.out.println("####");
+    this.talks = this.talkRepository.findAll();
   }
 }

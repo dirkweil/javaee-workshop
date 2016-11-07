@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.PersistenceException;
 
@@ -17,7 +18,8 @@ public class TalkMockRepository implements TalkRepository {
   private ConcurrentHashMap<Integer, Talk> store = new ConcurrentHashMap<>();
   private AtomicInteger idGen = new AtomicInteger();
 
-  public TalkMockRepository() {
+  @PostConstruct
+  void init() {
     persist(new Talk("Java EE ohne Ballast", TalkType.WORKSHOP));
     persist(new Talk("Eroeffnung", TalkType.KEYNOTE));
     persist(new Talk("JS ist toll", TalkType.SESSION));
