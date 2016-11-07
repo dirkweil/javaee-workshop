@@ -6,19 +6,5 @@
   <title>#{dummyPresenter.applicationName}</title>
 </h:head>
 
-<h:body>
-  <h:dataTable var="dummy" value="#{dummyPresenter.dummies}">
-    <h:column>
-      <f:facet name="header">Id</f:facet>
-      <h:outputText value="#{dummy.id}" />
-    </h:column>
-    <h:column>
-      <f:facet name="header">Name</f:facet>
-      <h:outputText value="#{dummy.name}" />
-    </h:column>
-  </h:dataTable>
-</h:body>
-
-<hr/>
-<h:outputText value="Powered by #{dummyPresenter.applicationCoordinates}"/>
+  <h:link value="Talks" outcome="/talk/talk"/>
 </html>
