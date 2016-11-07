@@ -1,20 +1,21 @@
 package de.gedoplan.workshop.presentation;
 
 import de.gedoplan.workshop.entity.Talk;
+import de.gedoplan.workshop.entity.TalkType;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
+import javax.faces.flow.FlowScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 import lombok.Getter;
 
 @Named
-@SessionScoped
+@FlowScoped("talk")
 public class TalkPresenter implements Serializable {
 
   @Inject
@@ -34,6 +35,12 @@ public class TalkPresenter implements Serializable {
     return "editTalk";
   }
 
+  public String createTalk() {
+    this.currentTalk = new Talk(null, null);
+    this.talks.add(this.currentTalk);
+    return "editTalk";
+  }
+
   public String saveTalk() {
     this.talkRepository.merge(this.currentTalk);
     return "talk";
@@ -43,5 +50,9 @@ public class TalkPresenter implements Serializable {
   void init() {
     System.out.println("####");
     this.talks = this.talkRepository.findAll();
+  }
+
+  public TalkType[] getTalkTypes() {
+    return TalkType.values();
   }
 }
