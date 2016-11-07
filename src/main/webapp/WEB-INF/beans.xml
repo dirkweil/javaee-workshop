@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/beans_1_1.xsd"
        bean-discovery-mode="all">
        <alternatives>
-         <class>de.gedoplan.workshop.persistence.TalkMockRepository</class>
+<!--          <class>de.gedoplan.workshop.persistence.TalkMockRepository</class> -->
        </alternatives>
 </beans>

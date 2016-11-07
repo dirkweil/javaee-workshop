@@ -10,6 +10,7 @@
 
 <h2>Talks</h2>
 
+<h:form>
 <p:dataTable var="t" value="#{talkPresenter.talks}">
   <p:column headerText="Title">
     <h:outputText value="#{t.title}" />
@@ -17,7 +18,11 @@
   <p:column headerText="Type">
     <h:outputText value="#{t.type}" />
   </p:column>
+  <p:column>
+    <h:commandLink action="#{talkPresenter.editTalk(t)}" value="edit" />
+  </p:column>
 </p:dataTable>
+</h:form>
 
 </body> 
 </html>
