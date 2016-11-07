@@ -3,6 +3,9 @@ package de.gedoplan.workshop.entity;
 import de.gedoplan.baselibs.persistence.entity.GeneratedIntegerIdEntity;
 
 import javax.persistence.Entity;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,6 +13,8 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Person extends GeneratedIntegerIdEntity {
   private String lastName;
   private String firstName;

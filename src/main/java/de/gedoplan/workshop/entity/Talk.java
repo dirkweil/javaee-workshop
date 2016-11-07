@@ -12,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -22,6 +25,8 @@ import lombok.Setter;
 @Setter
 @Table(name = "TALK")
 // @NamedQuery(query = "select x from Talk x", name = "talk.all")
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Talk extends GeneratedIntegerIdEntity {
   private String title;
 
