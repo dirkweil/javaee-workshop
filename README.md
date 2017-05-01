@@ -27,9 +27,11 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   Sie genau eingebunden haben, so schauen Sie in die Datei devstudio.ini im Verzeichnis studio der JBDS-Installation. Mit der Option -vm wird darin die
   für die Ausführung des JBDS zu nutzende Java-Version konfiguriert - meist in den ersten beiden Zeilen der Datei:
   
-    -vm
-    C:/Program Files/Java/jdk1.8.0_101/bin/javaw.exe
-    ...
+  ```
+  -vm
+  C:/Program Files/Java/jdk1.8.0_101/bin/javaw.exe
+  ...
+  ```
   
 - JBDS (wie auch Eclipse) enthält diverse Validatoren, die die Korrektheit von Deskriptoren etc. testen sollen. Leider funktionieren diese Validatoren
   (zumindest für Maven-Projekte) nicht korrekt. Wenn nach dem Import der Projekte Validierungsfehler (z. B. "JPA Problem") angezeigt werden, sollten Sie
@@ -43,11 +45,13 @@ Zum Mitmachen benötigen Sie die folgenden Dinge:
   im gleichen Verzeichnis finden Sie am Ende einige Start-Parameter für die JVM, eingeleitet durch -vmargs. Ergänzen Sie dort (nach der Zeile -vmargs) die 
   Zeile -javaagent:lombok-1.16.12.jar. Der gesamte Abschnitt der Ini-Datei sieht dann etwa so aus:
   
-    -vmargs
-    -javaagent:lombok-1.16.12.jar
-    -Xms512m
-    -Xmx1024m
-    ...
+  ```
+  -vmargs
+  -javaagent:lombok-1.16.12.jar
+  -Xms512m
+  -Xmx1024m
+  ...
+  ```
   
 Der Branch master enthält eine Startversion der Enterprise-Anwendung, die im Workshop aufgebaut wird. Dies geschieht allerdings in einem anderen Branch:
 - JAX 2016:   Branch jax16
