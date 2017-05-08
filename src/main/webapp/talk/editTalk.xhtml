@@ -1,0 +1,18 @@
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head></h:head>
+<body>
+
+  <h:form>
+    <h:panelGrid columns="2">
+      <h:outputLabel value="Title: " for="title" />
+      <h:inputText value="#{talkPresenter.currentTalk.title}" id="title" />
+
+      <h:outputLabel value="Type: " for="type" />
+      <h:inputText value="#{talkPresenter.currentTalk.type}" id="type" />
+    </h:panelGrid>
+  </h:form>
+
+</body>
+</html>

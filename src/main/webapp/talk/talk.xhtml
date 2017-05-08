@@ -18,7 +18,9 @@
       <p:column headerText="Type">
         <h:outputText value="#{talk.type}" />
       </p:column>
-
+      <p:column>
+        <h:commandLink action="#{talkPresenter.editTalk(talk)}" value="edit" />
+      </p:column>
     </p:dataTable>
 
     <br />

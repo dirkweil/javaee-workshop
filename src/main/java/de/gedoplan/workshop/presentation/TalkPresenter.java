@@ -10,6 +10,8 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import lombok.Getter;
+
 @Named // ("talkPresenter")
 @RequestScoped
 public class TalkPresenter {
@@ -26,5 +28,14 @@ public class TalkPresenter {
 
   public List<Talk> getTalks() {
     return this.talks;
+  }
+
+  @Getter
+  Talk currentTalk;
+
+  public String editTalk(Talk talk) {
+    this.currentTalk = talk;
+
+    return "editTalk";
   }
 }
