@@ -1,11 +1,10 @@
 package de.gedoplan.workshop.domain;
 
+import de.gedoplan.baselibs.persistence.entity.GeneratedIntegerIdEntity;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,11 +13,7 @@ import lombok.Setter;
 @Access(AccessType.FIELD)
 @Getter
 @Setter
-public class Person {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
-
+public class Person extends GeneratedIntegerIdEntity {
   private String lastName;
 
   private String firstName;

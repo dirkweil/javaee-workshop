@@ -1,14 +1,13 @@
 package de.gedoplan.workshop.domain;
 
+import de.gedoplan.baselibs.persistence.entity.GeneratedIntegerIdEntity;
+
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -20,11 +19,7 @@ import lombok.Setter;
 @Access(AccessType.FIELD)
 @Getter
 @Setter
-public class Talk {
-  @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private Integer id;
-
+public class Talk extends GeneratedIntegerIdEntity {
   private String title;
 
   @Column(name = "TALK_TYPE")
@@ -40,10 +35,5 @@ public class Talk {
   }
 
   protected Talk() {
-  }
-
-  @Override
-  public String toString() {
-    return "Talk [id=" + this.id + ", title=" + this.title + ", type=" + this.type + "]";
   }
 }
