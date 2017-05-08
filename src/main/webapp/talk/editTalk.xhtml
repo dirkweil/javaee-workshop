@@ -12,6 +12,8 @@
       <h:outputLabel value="Type: " for="type" />
       <h:inputText value="#{talkPresenter.currentTalk.type}" id="type" />
     </h:panelGrid>
+    
+    <h:commandButton action="#{talkPresenter.saveTalk()}" value="ok" />
   </h:form>
 
 </body>

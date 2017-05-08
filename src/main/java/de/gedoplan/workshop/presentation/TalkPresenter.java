@@ -3,18 +3,21 @@ package de.gedoplan.workshop.presentation;
 import de.gedoplan.workshop.domain.Talk;
 import de.gedoplan.workshop.persistence.TalkRepository;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.transaction.Transactional;
 
 import lombok.Getter;
 
 @Named // ("talkPresenter")
-@RequestScoped
-public class TalkPresenter {
+@SessionScoped
+@Transactional(rollbackOn = Exception.class)
+public class TalkPresenter implements Serializable {
 
   @Inject
   TalkRepository talkRepository;
@@ -37,5 +40,11 @@ public class TalkPresenter {
     this.currentTalk = talk;
 
     return "editTalk";
+  }
+
+  public String saveTalk() {
+    this.talkRepository.merge(this.currentTalk);
+
+    return "talk";
   }
 }
