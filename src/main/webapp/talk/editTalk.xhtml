@@ -10,7 +10,9 @@
       <h:inputText value="#{talkPresenter.currentTalk.title}" id="title" />
 
       <h:outputLabel value="Type: " for="type" />
-      <h:inputText value="#{talkPresenter.currentTalk.type}" id="type" />
+      <h:selectOneMenu value="#{talkPresenter.currentTalk.type}" id="type">
+        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+      </h:selectOneMenu>
     </h:panelGrid>
     
     <h:commandButton action="#{talkPresenter.saveTalk()}" value="ok" />
