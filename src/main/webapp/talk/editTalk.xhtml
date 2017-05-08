@@ -22,12 +22,18 @@
           </h:column>
         </h:dataTable>
         <h:outputText value="none" rendered="#{empty talkPresenter.currentTalk.speakers}" />
+        <h:selectOneMenu value="#{talkPresenter.additionalSpeaker}">
+          <f:selectItems value="#{talkPresenter.allSpeakers}" var="s" itemLabel="#{s.lastName}, #{s.firstName}" />
+        </h:selectOneMenu>
+        <h:commandButton action="#{talkPresenter.addSpeaker}" value="add" />
       </h:panelGroup>
 
     </h:panelGrid>
 
     <h:commandButton action="#{talkPresenter.saveTalk()}" value="ok" />
   </h:form>
+  
+  <h:messages />
 
 </body>
 </html>
