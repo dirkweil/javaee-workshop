@@ -42,8 +42,17 @@ public class TalkPresenter implements Serializable {
     return "editTalk";
   }
 
+  public String createTalk() {
+    this.currentTalk = new Talk(null, null);
+    this.talks.add(this.currentTalk);
+
+    return "editTalk";
+  }
+
   public String saveTalk() {
     this.talkRepository.merge(this.currentTalk);
+
+    postConstruct();
 
     return "talk";
   }
