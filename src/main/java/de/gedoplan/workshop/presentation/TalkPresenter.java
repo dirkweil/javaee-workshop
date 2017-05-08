@@ -8,15 +8,18 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.transaction.Transactional;
 
+import org.apache.deltaspike.core.api.scope.ViewAccessScoped;
+
 import lombok.Getter;
 
 @Named // ("talkPresenter")
-@SessionScoped
+// @SessionScoped
+// @FlowScoped("talk")
+@ViewAccessScoped
 @Transactional(rollbackOn = Exception.class)
 public class TalkPresenter implements Serializable {
 
