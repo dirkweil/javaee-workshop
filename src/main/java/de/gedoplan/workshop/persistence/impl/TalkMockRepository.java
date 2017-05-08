@@ -12,9 +12,11 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.inject.Alternative;
 import javax.persistence.PersistenceException;
 
 @ApplicationScoped
+@Alternative
 public class TalkMockRepository implements TalkRepository {
 
   private Map<Integer, Talk> mockTable = new ConcurrentHashMap<>();
