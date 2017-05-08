@@ -3,28 +3,24 @@
   xmlns:p="http://primefaces.org/ui">
 
 <h:head></h:head>
-<body>
+<h:body>
 
-  <h2>Talks:</h2>
+  <H2>Persons</H2>
 
   <h:form>
-    <p:dataTable var="talk" value="#{talkPresenter.talks}">
-      <p:column headerText="Id">
-        <h:outputText value="#{talk.id}" />
+    <p:dataTable value="#{personPresenter.persons}" var="person">
+      <p:column>
+        <f:facet name="header">Last name</f:facet>
+        <h:outputText value="#{person.lastName}" />
       </p:column>
-      <p:column headerText="Title">
-        <h:outputText value="#{talk.title}" />
+      <p:column>
+        <f:facet name="header">First name</f:facet>
+        <h:outputText value="#{person.firstName}" />
       </p:column>
-      <p:column headerText="Type">
-        <h:outputText value="#{talk.type}" />
-      </p:column>
-
     </p:dataTable>
-
     <br />
 
     <h:commandLink action="home" value="exit" />
-
   </h:form>
-</body>
+</h:body>
 </html>
