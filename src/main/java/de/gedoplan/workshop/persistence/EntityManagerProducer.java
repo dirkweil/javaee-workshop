@@ -6,11 +6,12 @@ import javax.persistence.PersistenceContext;
 
 public class EntityManagerProducer {
   @PersistenceContext(unitName = "default")
+  @Produces
   EntityManager entityManager;
 
-  @Produces
-  public EntityManager getEntityManager() {
-    return this.entityManager;
-  }
+  // @Produces
+  // public EntityManager getEntityManager() {
+  // return this.entityManager;
+  // }
 
 }
