@@ -11,10 +11,21 @@
 
       <h:outputLabel value="Type: " for="type" />
       <h:selectOneMenu value="#{talkPresenter.currentTalk.type}" id="type">
-        <f:selectItems value="#{talkPresenter.talkTypes}"/>
+        <f:selectItems value="#{talkPresenter.talkTypes}" />
       </h:selectOneMenu>
+
+      <h:outputLabel value="Speakers: " />
+      <h:panelGroup>
+        <h:dataTable value="#{talkPresenter.currentTalk.speakers}" var="s">
+          <h:column>
+            <h:outputText value="#{s.lastName}, #{s.firstName}" />
+          </h:column>
+        </h:dataTable>
+        <h:outputText value="none" rendered="#{empty talkPresenter.currentTalk.speakers}" />
+      </h:panelGroup>
+
     </h:panelGrid>
-    
+
     <h:commandButton action="#{talkPresenter.saveTalk()}" value="ok" />
   </h:form>
 
