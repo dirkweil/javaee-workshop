@@ -47,7 +47,7 @@ public class Talk extends GeneratedIntegerIdEntity {
     return !this.type.equals(TalkType.KEYNOTE) || this.title.length() > 40;
   }
 
-  @ManyToMany(fetch = FetchType.EAGER)
+  @ManyToMany(fetch = FetchType.LAZY)
   @JoinTable(joinColumns = @JoinColumn(name = "TALK_ID"), inverseJoinColumns = @JoinColumn(name = "SPEAKER_ID"))
   @Setter(AccessLevel.NONE)
   private Set<Person> speakers;

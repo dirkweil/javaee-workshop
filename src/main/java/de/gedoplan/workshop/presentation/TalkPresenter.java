@@ -48,7 +48,12 @@ public class TalkPresenter implements Serializable {
   Talk currentTalk;
 
   public String editTalk(Talk talk) {
-    this.currentTalk = talk;
+    /*
+     * Aktuellen Talk neu aus dem Repository holen, damit er im
+     * Managed-Zustand ist und Lazy-Attribute noch nachgelesen
+     * werden können.
+     */
+    this.currentTalk = this.talkRepository.findById(talk.getId());
 
     return "editTalk";
   }
@@ -66,10 +71,11 @@ public class TalkPresenter implements Serializable {
   public String saveTalk() {
     Set<ConstraintViolation<Talk>> errors = this.validator.validate(this.currentTalk);
     if (!errors.isEmpty()) {
-      // Das Objekt ist nicht valide; man könnte eine spezifische Fehlermeldung
-      // erzeugen, aber
-      // das sei dem Leser als Übung überlassen ;-) (Hinweis: API von
-      // ConstraintViolation)
+      /*
+       * Das Objekt ist nicht valide; man könnte eine spezifische Fehlermeldung
+       * erzeugen, aber das sei dem Leser als Übung überlassen ;-)
+       * (Hinweis: API von ConstraintViolation)
+       */
       FacesMessage message = new FacesMessage("Fehler: " + errors);
       message.setSeverity(FacesMessage.SEVERITY_ERROR);
       FacesContext.getCurrentInstance().addMessage(null, message);
